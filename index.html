@@ -4,108 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
+        /* Variables CSS para colores */
+        :root {
+            --color-primary-green: #4CAF50; /* Verde principal, similar al logo */
+            --color-primary-blue: #2196F3;  /* Azul principal, similar al logo */
+            --color-text-dark: #333;       /* Texto oscuro principal */
+            --color-text-light: #555;      /* Texto secundario */
+            --color-background-light: #f9f9f9; /* Fondo claro */
+            --color-border: #e0e0e0;       /* Color de borde */
+            --color-highlight: #e8f5e9;    /* Para resaltar secciones */
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            color: #333;
-            background-color: #f8f8f8; /* Un fondo ligeramente gris para un toque más profesional */
+            font-family: 'Roboto', sans-serif; /* Fuente más legible para el cuerpo */
+            line-height: 1.7; /* Interlineado mejorado */
+            margin: 0;
+            padding: 0;
+            color: var(--color-text-dark);
+            background-color: var(--color-background-light);
         }
+
         .container {
-            max-width: 800px;
-            margin: 40px auto; /* Mayor margen superior e inferior */
-            padding: 30px; /* Mayor padding interno */
+            max-width: 900px; /* Ancho un poco mayor */
+            margin: 50px auto; /* Márgenes superiores e inferiores generosos */
+            padding: 40px; /* Más padding interno */
             background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra más suave y pronunciada */
+            border-radius: 12px; /* Bordes más redondeados */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra más suave y extendida */
         }
-        h1 {
-            color: #2C3E50;
-            text-align: center; /* Centrar el título principal */
-            margin-bottom: 10px; /* Reducir espacio debajo del H1 */
-            line-height: 1.2; /* Ajustar interlineado para que sea más compacto */
-        }
-        h2 {
-            color: #34495E;
-            border-bottom: 2px solid #eee; /* Línea sutil bajo los subtítulos */
-            padding-bottom: 5px;
-            margin-top: 30px; /* Espacio antes de los subtítulos */
-            margin-bottom: 15px; /* Espacio después de los subtítulos */
-        }
-        .logo {
+
+        .header-section {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .logo {
+            margin-bottom: 25px;
         }
         .logo img {
-            max-width: 180px; /* Tamaño un poco más ajustado para el logo */
+            max-width: 160px; /* Tamaño del logo un poco más pequeño para elegancia */
             height: auto;
-            display: block; /* Para centrar correctamente la imagen */
-            margin: 0 auto; /* Centrar la imagen */
+            display: block;
+            margin: 0 auto;
         }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif; /* Fuente destacada para títulos */
+            font-size: 2.4em; /* Tamaño del título principal */
+            color: var(--color-primary-blue); /* Color del título principal */
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 1.3; /* Interlineado ajustado */
+            font-weight: 700; /* Negrita más fuerte */
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: var(--color-text-light);
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em; /* Tamaño de los subtítulos */
+            color: var(--color-primary-green); /* Color de los subtítulos */
+            border-bottom: 2px solid var(--color-highlight); /* Línea más marcada y con color */
+            padding-bottom: 8px;
+            margin-top: 40px; /* Más espacio antes de los subtítulos */
+            margin-bottom: 20px;
+            font-weight: 600; /* Negrita */
+        }
+
+        p {
+            margin-bottom: 1em;
+            color: var(--color-text-dark);
+            text-align: justify; /* Texto justificado para bloques de párrafo */
+        }
+        p strong {
+            color: var(--color-primary-blue); /* Resaltar negritas con el color azul */
+        }
+
+
         ul {
-            list-style-type: disc; /* Usar viñetas estándar */
-            margin-left: 20px;
+            list-style-type: none; /* Quitamos las viñetas por defecto */
             padding-left: 0;
+            margin-top: 15px;
+            margin-bottom: 25px;
         }
         li {
-            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px; /* Espacio para la viñeta personalizada */
+            margin-bottom: 12px; /* Más espacio entre ítems */
+            color: var(--color-text-dark);
         }
+        li::before {
+            content: '•'; /* Viñeta personalizada (punto) */
+            color: var(--color-primary-green); /* Color de la viñeta */
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
         a {
-            color: #3498DB; /* Color azul para enlaces */
-            text-decoration: none; /* Quitar subrayado por defecto */
+            color: var(--color-primary-blue);
+            text-decoration: none;
+            transition: color 0.3s ease; /* Transición suave al pasar el ratón */
         }
         a:hover {
-            text-decoration: underline; /* Subrayar al pasar el ratón */
+            color: var(--color-primary-green); /* Cambio de color al pasar el ratón */
+            text-decoration: underline;
         }
+
         .contact-info {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em; /* Texto de contacto un poco más pequeño */
-            color: #666;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid var(--color-border);
+            font-size: 0.95em;
+            color: var(--color-text-light);
+        }
+
+        hr { /* Línea divisoria, más sutil */
+            border: 0;
+            height: 1px;
+            background: var(--color-border);
+            margin: 40px 0;
+        }
+
+        /* Estilos responsivos básicos */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .tagline {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="IMG_7431.jpeg" alt="Logo BioInAgro">
+        <div class="header-section">
+            <div class="logo">
+                <img src="IMG_7431.jpeg" alt="Logo BioInAgro">
+            </div>
+            <h1>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</h1>
+            <p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola</p>
         </div>
-
-        <h1>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</h1>
 
         <p>Bienvenido/a a BioInAgro: Innovación en Análisis Biológico para la Agricultura de Almería</p>
 
         <p>En BioInAgro, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo de profesionales cualificados del sector con sede en Almería, apasionados por desvelar el "código biológico" que impulsa la salud y la productividad de tus cultivos.</p>
 
-        ---
+        <hr>
 
         <h2>Tu Suelo Habla, Nosotros te Ayudamos a Entenderlo</h2>
 
         <p>La tierra bajo tus pies es un ecosistema vivo, un universo microscópico de bacterias, hongos y otros microorganismos que influyen directamente en todo, desde la absorción de nutrientes hasta la resistencia a enfermedades.</p>
 
         <p>¿Qué hacemos?</p>
-        <p>Utilizamos bioinformática avanzada y técnicas de metabarcoding (como QIIME) para analizar el ADN de estos miles de millones de habitantes de tu suelo y de tus plantas. Transformamos datos genéticos complejos en información clara y soluciones prácticas para tu explotación agrícola.</p>
+        <p>Utilizamos **bioinformática avanzada y técnicas de metabarcoding** (como QIIME) para analizar el ADN de estos miles de millones de habitantes de tu suelo y de tus plantas. Transformamos datos genéticos complejos en **información clara y soluciones prácticas** para tu explotación agrícola.</p>
 
-        ---
+        <hr>
 
         <h2>¿Por Qué BioInAgro? Tus Desafíos, Nuestras Soluciones</h2>
 
         <p>Sabemos que en la agricultura almeriense buscas optimizar cada recurso y maximizar tu rentabilidad. BioInAgro te ofrece una ventaja competitiva al abordar desafíos clave:</p>
 
         <ul>
-            <li>Rendimientos Mejorados: Identifica microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de tus cultivos.</li>
-            <li>Fertilización Inteligente: Reduce la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de tu suelo para nutrir las plantas.</li>
-            <li>Salud Vegetal Preventiva: Detecta desequilibrios microbianos o la presencia temprana de patógenos, permitiéndote actuar antes de que los problemas se agraven.</li>
-            <li>Sostenibilidad Real: Apoya la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de tus suelos y cumpliendo con las demandas del mercado.</li>
+            <li>**Rendimientos Mejorados:** Identifica microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de tus cultivos.</li>
+            <li>**Fertilización Inteligente:** Reduce la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de tu suelo para nutrir las plantas.</li>
+            <li>**Salud Vegetal Preventiva:** Detecta desequilibrios microbianos o la presencia temprana de patógenos, permitiéndote actuar antes de que los problemas se agraven.</li>
+            <li>**Sostenibilidad Real:** Apoya la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de tus suelos y cumpliendo con las demandas del mercado.</li>
         </ul>
 
-        <p>Con BioInAgro, no solo obtienes datos; obtienes conocimiento accionable para tomar decisiones más informadas, eficientes y sostenibles en tu día a día.</p>
+        <p>Con BioInAgro, no solo obtienes datos; obtienes **conocimiento accionable** para tomar decisiones más informadas, eficientes y sostenibles en tu día a día.</p>
 
-        ---
+        <hr>
 
         <h2>Nuestro Compromiso: Ciencia al Servicio del Campo</h2>
 
