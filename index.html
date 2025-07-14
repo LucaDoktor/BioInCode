@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</title>
+    <title>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
         /* Variables CSS para colores */
         :root {
-            --color-primary-green: #4CAF50;
-            --color-primary-blue: #2196F3;
+            --color-primary-green: #4CAF50; /* A green from a common palette */
+            --color-primary-blue: #2196F3;  /* A blue from a common palette */
             --color-text-dark: #333;
             --color-text-light: #555;
             --color-background-light: #f9f9f9;
             --color-border: #e0e0e0;
             --color-highlight: #e8f5e9;
             --color-black-text: #000;
+
+            /* Colores de sección (ajustados para armonizar con el logo verde/azul) */
+            --section-color-1: #eef7ee; /* Very light green */
+            --section-color-2: #e0f2f7; /* Very light blue */
+            --section-color-3: #f5f5f5; /* Light gray */
+            --section-color-4: #f7eef7; /* Very light purple/lilac, for variety */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scroll for section jumps */
         }
 
         body {
@@ -131,14 +141,40 @@
             }
         }
 
-        /* CONTENIDO PRINCIPAL */
-        .container {
+        /* CONTENIDO PRINCIPAL - Actualizado para secciones y colores */
+        .section {
+            padding: 60px 40px; /* Generous padding for sections */
+            margin: 0; /* Remove default margin */
+            border-bottom: 1px solid var(--color-border); /* Separator between sections */
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-colored-1 {
+            background-color: var(--section-color-1);
+        }
+
+        .section-colored-2 {
+            background-color: var(--section-color-2);
+        }
+
+        .section-colored-3 {
+            background-color: var(--section-color-3);
+        }
+
+        .section-colored-4 {
+            background-color: var(--section-color-4);
+        }
+
+        .section-content {
             max-width: 900px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: #fff;
+            margin: 0 auto;
+            background-color: #fff; /* White background for content within colored sections */
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            padding: 40px;
         }
 
         .header-section {
@@ -185,6 +221,15 @@
             padding-bottom: 8px;
             margin-top: 40px;
             margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+            color: var(--color-black-text);
+            margin-top: 30px;
+            margin-bottom: 15px;
             font-weight: 600;
         }
 
@@ -326,11 +371,67 @@
             transform: translateY(-2px);
         }
 
+        /* Estilos para desplegables (details/summary) */
+        details {
+            background-color: var(--color-background-light);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: background-color 0.3s ease;
+        }
+
+        details[open] {
+            background-color: #fff; /* White when open */
+        }
+
+        summary {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--color-primary-blue);
+            cursor: pointer;
+            outline: none;
+            padding: 5px 0;
+            display: block; /* Make summary take full width */
+            position: relative;
+            user-select: none; /* Prevent text selection on click */
+        }
+
+        summary::marker {
+            display: none; /* Hide default triangle */
+        }
+
+        summary::before {
+            content: '+ '; /* Custom plus icon */
+            display: inline-block;
+            margin-right: 10px;
+            color: var(--color-primary-green);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::before {
+            content: '- '; /* Custom minus icon when open */
+            transform: rotate(0deg); /* No rotation needed for simple plus/minus */
+        }
+
+        details p, details ul, details li {
+            padding-left: 20px; /* Indent content within details */
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
         /* Estilos responsivos adicionales */
         @media (max-width: 768px) {
-            .container {
-                margin: 20px;
+            .section {
+                padding: 30px 20px;
+            }
+            .section-content {
+                margin: 0; /* Remove horizontal margin on small screens */
                 padding: 25px;
+                border-radius: 0; /* Remove border-radius on small screens if desired */
+                box-shadow: none; /* Remove box-shadow on small screens if desired */
             }
             h1 {
                 font-size: 1.8em;
@@ -367,58 +468,106 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <section id="inicio" class="header-section">
+    <section id="inicio" class="section section-colored-1">
+        <div class="section-content header-section">
             <div class="logo">
-                <img src="IMG_7431.jpeg" alt="Logo BioInAgro">
+                <img src="IMG_7431.jpeg" alt="Logo BioInCode">
             </div>
-            <h1>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</h1>
-            <p class="tagline">Análisis biológico avanzado para la sostenibilidad y productividad agrícola.</p>
-        </section>
+            [span_0](start_span)<h1>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</h1>[span_0](end_span)
+            [span_1](start_span)<p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.</p>[span_1](end_span)
+        </div>
+    </section>
 
-        <section id="quienes-somos">
+    <section id="quienes-somos" class="section section-colored-2">
+        <div class="section-content">
             <h2>Quiénes Somos</h2>
-            <p>Bienvenido/a a BioInAgro: Innovación en análisis biológico para la agricultura moderna.</p>
-            <p>En BioInAgro, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo de profesionales cualificados del sector con sede en el sur de España, apasionados por desvelar el "código biológico" que impulsa la salud y la productividad de sus cultivos.</p>
-            <p>Nuestra experiencia académica y nuestra pasión por la bioinformática nos permiten ofrecer un servicio de análisis profundo y riguroso, adaptado a las necesidades específicas de la agricultura intensiva. Estamos aquí para cerrar la brecha entre la investigación puntera y la aplicación práctica en su finca.</p>
-        </section>
+            [span_2](start_span)<p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible.[span_2](end_span) [span_3](start_span)Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola.[span_3](end_span) [span_4](start_span)Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos.[span_4](end_span)</p>
+            [span_5](start_span)<p>BioInCode es una empresa de biotecnología agrícola fundada por profesionales cualificados del sector, especializados en biotecnología, bioquímica y bioinformática.[span_5](end_span) [span_6](start_span)Nuestro propósito es desvelar el "código biológico" de suelos, plantas y productos agrícolas a través de análisis microbiológicos avanzados, ofreciendo soluciones para optimizar la producción, la sostenibilidad y la calidad en la agricultura.[span_6](end_span) [span_7](start_span)Estamos aquí para cerrar la brecha entre la investigación de vanguardia y la aplicación práctica en su finca.[span_7](end_span)</p>
+        </div>
+    </section>
 
-        <hr>
+    <section id="servicios" class="section section-colored-3">
+        <div class="section-content">
+            [span_8](start_span)<h2>Nuestra Oferta de Servicios: Precisión Biológica para su Cultivo y Productos</h2>[span_8](end_span)
+            [span_9](start_span)<p>En BioInCode, transformamos la complejidad del mundo microbiano en conocimiento práctico.[span_9](end_span) [span_10](start_span)Nuestros servicios se centran en el análisis avanzado y la consultoría, proporcionando información crucial para la toma de decisiones estratégicas.[span_10](end_span)</p>
 
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
+            <h3>1. [span_11](start_span)Diagnóstico Integral del Microbioma de Suelos y Plantas</h3>[span_11](end_span)
+            [span_12](start_span)<p>Comprenda la verdadera salud y el potencial biológico de su sistema suelo-planta.[span_12](end_span)</p>
+
+            <details>
+                <summary>Análisis Molecular (Metabarcoding)</summary>
+                <ul>
+                    [span_13](start_span)<li>Identificación de Diversidad Microbiana: Cuantificación y tipificación de comunidades bacterianas y fúngicas para evaluar la biodiversidad y el equilibrio del ecosistema (suelo, rizosfera, filosfera).[span_13](end_span)</li>
+                    [span_14](start_span)<li>Perfiles de Funcionalidad Potencial: Detección de grupos microbianos asociados a funciones clave como la fijación de nitrógeno, solubilización de fósforo, mineralización de materia orgánica, y biocontrol de patógenos.[span_14](end_span)</li>
+                    [span_15](start_span)<li>Detección de Patógenos y Bioindicadores: Identificación temprana de microorganismos causantes de enfermedades o aquellos que actúan como indicadores de estrés o desequilibrios.[span_15](end_span)</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Análisis Microbiológicos Cultivables</summary>
+                <ul>
+                    [span_16](start_span)<li>Cuantificación de Grupos Funcionales: Recuento y aislamiento de bacterias y hongos totales, así como de grupos microbianos específicos implicados en el ciclo del nitrógeno, fósforo, hierro y otros nutrientes clave.[span_16](end_span)</li>
+                    [span_17](start_span)<li>Aislamiento y Caracterización de Microorganismos beneficiosos del suelo: Identificación de cepas prometedoras para futuras aplicaciones biotecnológicas.[span_17](end_span)</li>
+                    [span_18](start_span)<li>Evaluación de la Viabilidad Microbiana: Determinación de la cantidad de microorganismos activos y cultivables en una muestra.[span_18](end_span)</li>
+                </ul>
+            </details>
+
+            <h3>2. [span_19](start_span)Control de Calidad Microbiológico de Insumos y Productos Agrícolas</h3>[span_19](end_span)
+            [span_20](start_span)<p>Asegure la calidad y seguridad biológica de los productos que utiliza y comercializa.[span_20](end_span)</p>
+
+            <details>
+                <summary>Detalles del Control de Calidad Microbiológico</summary>
+                <ul>
+                    [span_21](start_span)<li>Análisis de Biofertilizantes y Biopesticidas: Verificación de la composición microbiana declarada, viabilidad y ausencia de contaminantes en formulaciones comerciales.[span_21](end_span)</li>
+                    [span_22](start_span)<li>Monitoreo de Compost y Materia Orgánica: Evaluación de la calidad microbiológica y madurez de enmiendas orgánicas antes de su aplicación en campo.[span_22](end_span)</li>
+                    [span_23](start_span)<li>Control Microbiológico de Aguas de Riego: Detección de microorganismos indicadores de contaminación final que puedan afectar la salud del cultivo o la seguridad alimentaria.[span_23](end_span)</li>
+                    [span_24](start_span)<li>Análisis Microbiológico de Productos Agrícolas Frescos: Evaluación de la carga microbiana en frutas, verduras y otros productos para asegurar el cumplimiento de estándares de seguridad alimentaria y prolongar la vida útil.[span_24](end_span)</li>
+                </ul>
+            </details>
+
+            <h3>3. [span_25](start_span)Consultoría y Desarrollo de Estrategias Biológicas Personalizadas</h3>[span_25](end_span)
+            [span_26](start_span)<p>Transformamos los datos complejos en estrategias aplicables y soporte técnico continuo.[span_26](end_span)</p>
+
+            <details>
+                <summary>Detalles de Consultoría y Estrategias</summary>
+                <ul>
+                    [span_27](start_span)<li>Asesoramiento Estratégico: Interpretación detallada de los resultados de análisis para el diseño de planes de manejo agrícola optimizados, desde la fertilización hasta el control de plagas y enfermedades.[span_27](end_span)</li>
+                    [span_28](start_span)<li>Optimización de Programas de Nutrición: Basado en el perfil microbiológico del suelo, se desarrollan recomendaciones para reducir la dependencia de insumos químicos y potenciar procesos biológicos.[span_28](end_span)</li>
+                    [span_29](start_span)<li>Diseño y Seguimiento de Ensayos: Colaboración en la planificación y evaluación de pruebas de campo para validar la eficacia de nuevas prácticas agrícolas, bioinsumos o productos.[span_29](end_span)</li>
+                    [span_30](start_span)<li>Formación y Capacitación: Ofrecemos talleres y cursos personalizados para equipos técnicos y agricultores sobre los principios del microbioma, la interpretación de análisis y la implementación de soluciones biológicas.[span_30](end_span)</li>
+                </ul>
+            </details>
             <div class="services-image">
-                <img src="IMG_7433.jpeg" alt="Esquema de servicios de BioInAgro">
+                <img src="IMG_7433.jpeg" alt="Esquema de servicios de BioInCode">
             </div>
-            <p>Utilizamos herramientas avanzadas de bioinformática y técnicas de metabarcoding para analizar el ADN de los miles de miles de millones de microorganismos que habitan en su suelo y en sus plantas. Transformamos datos genéticos complejos en información clara y soluciones prácticas para su explotación agrícola.</p>
-            <p>Su suelo habla, y nosotros le ayudamos a entenderlo. La tierra bajo sus pies es un ecosistema vivo, un universo microscópico de bacterias, hongos y otros organismos que influyen directamente en todo, desde la absorción de nutrientes hasta la resistencia a enfermedades.</p>
-        </section>
+        </div>
+    </section>
 
-        <hr>
-
-        <section id="por-que-elegirnos">
-            <h2>Por Qué Elegirnos</h2>
-            <p>Sabemos que la agricultura moderna busca optimizar cada recurso y maximizar su rentabilidad. BioInAgro le ofrece una ventaja competitiva al abordar desafíos clave:</p>
+    <section id="por-que-elegirnos" class="section section-colored-4">
+        <div class="section-content">
+            <h2>¿Por Qué Elegir BioInCode? [span_31](start_span)Nuestro Valor Añadido</h2>[span_31](end_span)
+            [span_32](start_span)<p>En un sector agrícola cada vez más exigente, BioInCode se posiciona como su aliado estratégico:[span_32](end_span)</p>
             <ul>
-                <li>Rendimientos mejorados: Identificamos microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de sus cultivos.</li>
-                <li>Fertilización inteligente: Reducimos la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de su suelo para nutrir las plantas.</li>
-                <li>Salud vegetal preventiva: Detectamos desequilibrios microbianos o la presencia temprana de patógenos, permitiéndole actuar antes de que los problemas se agraven.</li>
-                <li>Sostenibilidad real: Apoyamos la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de sus suelos y cumpliendo con las demandas del mercado.</li>
+                [span_33](start_span)<li>Conocimiento Científico Profundo: Un equipo con formación de alto nivel en las disciplinas más relevantes (biotecnología, bioquímica, bioinformática y ciencias ambientales) para ofrecer una perspectiva única y rigurosa.[span_33](end_span)</li>
+                [span_34](start_span)<li>Tecnología de Vanguardia y Métodos Exhaustivos: Combinamos las técnicas moleculares más avanzadas (metabarcoding) con métodos cultivables tradicionales para una visión 360° del microbioma, garantizando precisión y fiabilidad.[span_34](end_span)</li>
+                [span_35](start_span)<li>Soluciones aplicables, No Solo Datos: Transformamos la complejidad científica en recomendaciones prácticas y personalizadas que impactan directamente en la eficiencia, productividad y rentabilidad de su explotación.[span_35](end_span)</li>
+                [span_36](start_span)<li>Enfoque en la Sostenibilidad: Contribuimos a una agricultura más ecológica y resiliente, reduciendo la huella ambiental y respondiendo a las demandas de un mercado consciente.[span_36](end_span)</li>
+                [span_37](start_span)<li>Adaptabilidad y Alcance Amplio: Aunque nacidos en el sur de España, nuestros servicios están diseñados para ser aplicables a cualquier tipo de agricultura intensiva, con potencial de expansión global.[span_37](end_span)</li>
+                [span_38](start_span)<li>Garantía de Calidad Biológica: Ofrecemos un control microbiológico riguroso para insumos y productos, añadiendo una capa de confianza y seguridad a su cadena de valor.[span_38](end_span)</li>
             </ul>
-            <p>Con BioInAgro, no solo obtiene datos; obtiene conocimiento accionable para tomar decisiones más informadas, eficientes y sostenibles en su día a día.</p>
-        </section>
+        </div>
+    </section>
 
-        <hr>
-
-        <section id="contacto">
-            <h2>Contáctenos y Suscríbase</h2>
-            <p>¿Listo para descubrir el potencial oculto de su suelo?</p>
-            <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInAgro puede transformar su agricultura.</p>
+    <section id="contacto" class="section section-colored-1">
+        <div class="section-content">
+            [span_39](start_span)<h2>Contacto</h2>[span_39](end_span)
+            [span_40](start_span)<p>¿Listo para descubrir el potencial oculto de su suelo y optimizar su producción?[span_40](end_span)</p>
+            [span_41](start_span)<p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.[span_41](end_span)</p>
 
             <hr>
 
             <h3>Manténgase Informado</h3>
-            <p>Suscríbase a nuestra lista de correo para recibir las últimas noticias, avances y ofertas especiales de BioInAgro directamente en su bandeja de entrada.</p>
+            <p>Suscríbase a nuestra lista de correo para recibir las últimas noticias, avances y ofertas especiales de BioInCode directamente en su bandeja de entrada.</p>
 
             <div class="newsletter-form-container">
                 <form action="https://formspree.io/f/mjkobaqw" method="POST" class="contact-form">
@@ -436,11 +585,11 @@
                 </div>
 
             <div class="contact-info">
-                <p>aedifco@proton.me | Ubicación: Sur de España</p>
-                <p>*(Próximamente: Más información sobre nuestros servicios en BioInCode.com)*</p>
+                [span_42](start_span)<p>Email: aedifco@proton.me[span_42](end_span) | [span_43](start_span)Ubicación: Almería, España.[span_43](end_span)</p>
+                [span_44](start_span)<p>*(Próximamente: Más información detallada sobre nuestros servicios y proyectos en BioInCode.com)*[span_44](end_span)</p>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <script>
         const toggleButton = document.getElementById('menu-toggle');
