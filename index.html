@@ -367,8 +367,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar a');
-            const navbarLinksContainer = document.getElementById('nav-list');
-            const menuToggle = document.getElementById('menu-toggle');
+            const navbarLinksContainer = document.getElementById('nav-list'); // Usar nav-list aquí
 
             function highlightNavOnScroll() {
                 let current = '';
