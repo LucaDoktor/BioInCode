@@ -143,7 +143,7 @@
 
         /* CONTENIDO PRINCIPAL - Actualizado para secciones y colores */
         .section {
-            padding: 60px 40px; /* Generous padding for sections */
+            padding: 60px 0; /* Generous padding for sections, no horizontal padding here */
             margin: 0; /* Remove default margin */
             border-bottom: 1px solid var(--color-border); /* Separator between sections */
         }
@@ -170,7 +170,7 @@
 
         .section-content {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 0 auto; /* Center the content within the colored section */
             background-color: #fff; /* White background for content within colored sections */
             border-radius: 12px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -425,13 +425,13 @@
         /* Estilos responsivos adicionales */
         @media (max-width: 768px) {
             .section {
-                padding: 30px 20px;
+                padding: 30px 0; /* Adjusted padding for smaller screens */
             }
             .section-content {
-                margin: 0; /* Remove horizontal margin on small screens */
+                margin: 0 20px; /* Add some horizontal margin for smaller screens */
                 padding: 25px;
-                border-radius: 0; /* Remove border-radius on small screens if desired */
-                box-shadow: none; /* Remove box-shadow on small screens if desired */
+                border-radius: 12px; /* Keep border-radius for consistency */
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Keep shadow for consistency */
             }
             h1 {
                 font-size: 1.8em;
@@ -473,68 +473,68 @@
             <div class="logo">
                 <img src="IMG_7431.jpeg" alt="Logo BioInCode">
             </div>
-            [span_0](start_span)<h1>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</h1>[span_0](end_span)
-            [span_1](start_span)<p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.</p>[span_1](end_span)
+            <h1>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</h1>
+            <p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.</p>
         </div>
     </section>
 
     <section id="quienes-somos" class="section section-colored-2">
         <div class="section-content">
             <h2>Quiénes Somos</h2>
-            [span_2](start_span)<p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible.[span_2](end_span) [span_3](start_span)Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola.[span_3](end_span) [span_4](start_span)Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos.[span_4](end_span)</p>
-            [span_5](start_span)<p>BioInCode es una empresa de biotecnología agrícola fundada por profesionales cualificados del sector, especializados en biotecnología, bioquímica y bioinformática.[span_5](end_span) [span_6](start_span)Nuestro propósito es desvelar el "código biológico" de suelos, plantas y productos agrícolas a través de análisis microbiológicos avanzados, ofreciendo soluciones para optimizar la producción, la sostenibilidad y la calidad en la agricultura.[span_6](end_span) [span_7](start_span)Estamos aquí para cerrar la brecha entre la investigación de vanguardia y la aplicación práctica en su finca.[span_7](end_span)</p>
+            <p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola. Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos.</p>
+            <p>BioInCode es una empresa de biotecnología agrícola fundada por profesionales cualificados del sector, especializados en biotecnología, bioquímica y bioinformática. Nuestro propósito es desvelar el "código biológico" de suelos, plantas y productos agrícolas a través de análisis microbiológicos avanzados, ofreciendo soluciones para optimizar la producción, la sostenibilidad y la calidad en la agricultura. Estamos aquí para cerrar la brecha entre la investigación de vanguardia y la aplicación práctica en su finca.</p>
         </div>
     </section>
 
     <section id="servicios" class="section section-colored-3">
         <div class="section-content">
-            [span_8](start_span)<h2>Nuestra Oferta de Servicios: Precisión Biológica para su Cultivo y Productos</h2>[span_8](end_span)
-            [span_9](start_span)<p>En BioInCode, transformamos la complejidad del mundo microbiano en conocimiento práctico.[span_9](end_span) [span_10](start_span)Nuestros servicios se centran en el análisis avanzado y la consultoría, proporcionando información crucial para la toma de decisiones estratégicas.[span_10](end_span)</p>
+            <h2>Nuestra Oferta de Servicios: Precisión Biológica para su Cultivo y Productos</h2>
+            <p>En BioInCode, transformamos la complejidad del mundo microbiano en conocimiento práctico. Nuestros servicios se centran en el análisis avanzado y la consultoría, proporcionando información crucial para la toma de decisiones estratégicas.</p>
 
-            <h3>1. [span_11](start_span)Diagnóstico Integral del Microbioma de Suelos y Plantas</h3>[span_11](end_span)
-            [span_12](start_span)<p>Comprenda la verdadera salud y el potencial biológico de su sistema suelo-planta.[span_12](end_span)</p>
+            <h3>1. Diagnóstico Integral del Microbioma de Suelos y Plantas</h3>
+            <p>Comprenda la verdadera salud y el potencial biológico de su sistema suelo-planta.</p>
 
             <details>
                 <summary>Análisis Molecular (Metabarcoding)</summary>
                 <ul>
-                    [span_13](start_span)<li>Identificación de Diversidad Microbiana: Cuantificación y tipificación de comunidades bacterianas y fúngicas para evaluar la biodiversidad y el equilibrio del ecosistema (suelo, rizosfera, filosfera).[span_13](end_span)</li>
-                    [span_14](start_span)<li>Perfiles de Funcionalidad Potencial: Detección de grupos microbianos asociados a funciones clave como la fijación de nitrógeno, solubilización de fósforo, mineralización de materia orgánica, y biocontrol de patógenos.[span_14](end_span)</li>
-                    [span_15](start_span)<li>Detección de Patógenos y Bioindicadores: Identificación temprana de microorganismos causantes de enfermedades o aquellos que actúan como indicadores de estrés o desequilibrios.[span_15](end_span)</li>
+                    <li>Identificación de Diversidad Microbiana: Cuantificación y tipificación de comunidades bacterianas y fúngicas para evaluar la biodiversidad y el equilibrio del ecosistema (suelo, rizosfera, filosfera).</li>
+                    <li>Perfiles de Funcionalidad Potencial: Detección de grupos microbianos asociados a funciones clave como la fijación de nitrógeno, solubilización de fósforo, mineralización de materia orgánica, y biocontrol de patógenos.</li>
+                    <li>Detección de Patógenos y Bioindicadores: Identificación temprana de microorganismos causantes de enfermedades o aquellos que actúan como indicadores de estrés o desequilibrios.</li>
                 </ul>
             </details>
 
             <details>
                 <summary>Análisis Microbiológicos Cultivables</summary>
                 <ul>
-                    [span_16](start_span)<li>Cuantificación de Grupos Funcionales: Recuento y aislamiento de bacterias y hongos totales, así como de grupos microbianos específicos implicados en el ciclo del nitrógeno, fósforo, hierro y otros nutrientes clave.[span_16](end_span)</li>
-                    [span_17](start_span)<li>Aislamiento y Caracterización de Microorganismos beneficiosos del suelo: Identificación de cepas prometedoras para futuras aplicaciones biotecnológicas.[span_17](end_span)</li>
-                    [span_18](start_span)<li>Evaluación de la Viabilidad Microbiana: Determinación de la cantidad de microorganismos activos y cultivables en una muestra.[span_18](end_span)</li>
+                    <li>Cuantificación de Grupos Funcionales: Recuento y aislamiento de bacterias y hongos totales, así como de grupos microbianos específicos implicados en el ciclo del nitrógeno, fósforo, hierro y otros nutrientes clave.</li>
+                    <li>Aislamiento y Caracterización de Microorganismos beneficiosos del suelo: Identificación de cepas prometedoras para futuras aplicaciones biotecnológicas.</li>
+                    <li>Evaluación de la Viabilidad Microbiana: Determinación de la cantidad de microorganismos activos y cultivables en una muestra.</li>
                 </ul>
             </details>
 
-            <h3>2. [span_19](start_span)Control de Calidad Microbiológico de Insumos y Productos Agrícolas</h3>[span_19](end_span)
-            [span_20](start_span)<p>Asegure la calidad y seguridad biológica de los productos que utiliza y comercializa.[span_20](end_span)</p>
+            <h3>2. Control de Calidad Microbiológico de Insumos y Productos Agrícolas</h3>
+            <p>Asegure la calidad y seguridad biológica de los productos que utiliza y comercializa.</p>
 
             <details>
                 <summary>Detalles del Control de Calidad Microbiológico</summary>
                 <ul>
-                    [span_21](start_span)<li>Análisis de Biofertilizantes y Biopesticidas: Verificación de la composición microbiana declarada, viabilidad y ausencia de contaminantes en formulaciones comerciales.[span_21](end_span)</li>
-                    [span_22](start_span)<li>Monitoreo de Compost y Materia Orgánica: Evaluación de la calidad microbiológica y madurez de enmiendas orgánicas antes de su aplicación en campo.[span_22](end_span)</li>
-                    [span_23](start_span)<li>Control Microbiológico de Aguas de Riego: Detección de microorganismos indicadores de contaminación final que puedan afectar la salud del cultivo o la seguridad alimentaria.[span_23](end_span)</li>
-                    [span_24](start_span)<li>Análisis Microbiológico de Productos Agrícolas Frescos: Evaluación de la carga microbiana en frutas, verduras y otros productos para asegurar el cumplimiento de estándares de seguridad alimentaria y prolongar la vida útil.[span_24](end_span)</li>
+                    <li>Análisis de Biofertilizantes y Biopesticidas: Verificación de la composición microbiana declarada, viabilidad y ausencia de contaminantes en formulaciones comerciales.</li>
+                    <li>Monitoreo de Compost y Materia Orgánica: Evaluación de la calidad microbiológica y madurez de enmiendas orgánicas antes de su aplicación en campo.</li>
+                    <li>Control Microbiológico de Aguas de Riego: Detección de microorganismos indicadores de contaminación final que puedan afectar la salud del cultivo o la seguridad alimentaria.</li>
+                    <li>Análisis Microbiológico de Productos Agrícolas Frescos: Evaluación de la carga microbiana en frutas, verduras y otros productos para asegurar el cumplimiento de estándares de seguridad alimentaria y prolongar la vida útil.</li>
                 </ul>
             </details>
 
-            <h3>3. [span_25](start_span)Consultoría y Desarrollo de Estrategias Biológicas Personalizadas</h3>[span_25](end_span)
-            [span_26](start_span)<p>Transformamos los datos complejos en estrategias aplicables y soporte técnico continuo.[span_26](end_span)</p>
+            <h3>3. Consultoría y Desarrollo de Estrategias Biológicas Personalizadas</h3>
+            <p>Transformamos los datos complejos en estrategias aplicables y soporte técnico continuo.</p>
 
             <details>
                 <summary>Detalles de Consultoría y Estrategias</summary>
                 <ul>
-                    [span_27](start_span)<li>Asesoramiento Estratégico: Interpretación detallada de los resultados de análisis para el diseño de planes de manejo agrícola optimizados, desde la fertilización hasta el control de plagas y enfermedades.[span_27](end_span)</li>
-                    [span_28](start_span)<li>Optimización de Programas de Nutrición: Basado en el perfil microbiológico del suelo, se desarrollan recomendaciones para reducir la dependencia de insumos químicos y potenciar procesos biológicos.[span_28](end_span)</li>
-                    [span_29](start_span)<li>Diseño y Seguimiento de Ensayos: Colaboración en la planificación y evaluación de pruebas de campo para validar la eficacia de nuevas prácticas agrícolas, bioinsumos o productos.[span_29](end_span)</li>
-                    [span_30](start_span)<li>Formación y Capacitación: Ofrecemos talleres y cursos personalizados para equipos técnicos y agricultores sobre los principios del microbioma, la interpretación de análisis y la implementación de soluciones biológicas.[span_30](end_span)</li>
+                    <li>Asesoramiento Estratégico: Interpretación detallada de los resultados de análisis para el diseño de planes de manejo agrícola optimizados, desde la fertilización hasta el control de plagas y enfermedades.</li>
+                    <li>Optimización de Programas de Nutrición: Basado en el perfil microbiológico del suelo, se desarrollan recomendaciones para reducir la dependencia de insumos químicos y potenciar procesos biológicos.</li>
+                    <li>Diseño y Seguimiento de Ensayos: Colaboración en la planificación y evaluación de pruebas de campo para validar la eficacia de nuevas prácticas agrícolas, bioinsumos o productos.</li>
+                    <li>Formación y Capacitación: Ofrecemos talleres y cursos personalizados para equipos técnicos y agricultores sobre los principios del microbioma, la interpretación de análisis y la implementación de soluciones biológicas.</li>
                 </ul>
             </details>
             <div class="services-image">
@@ -545,24 +545,24 @@
 
     <section id="por-que-elegirnos" class="section section-colored-4">
         <div class="section-content">
-            <h2>¿Por Qué Elegir BioInCode? [span_31](start_span)Nuestro Valor Añadido</h2>[span_31](end_span)
-            [span_32](start_span)<p>En un sector agrícola cada vez más exigente, BioInCode se posiciona como su aliado estratégico:[span_32](end_span)</p>
+            <h2>¿Por Qué Elegir BioInCode? Nuestro Valor Añadido</h2>
+            <p>En un sector agrícola cada vez más exigente, BioInCode se posiciona como su aliado estratégico:</p>
             <ul>
-                [span_33](start_span)<li>Conocimiento Científico Profundo: Un equipo con formación de alto nivel en las disciplinas más relevantes (biotecnología, bioquímica, bioinformática y ciencias ambientales) para ofrecer una perspectiva única y rigurosa.[span_33](end_span)</li>
-                [span_34](start_span)<li>Tecnología de Vanguardia y Métodos Exhaustivos: Combinamos las técnicas moleculares más avanzadas (metabarcoding) con métodos cultivables tradicionales para una visión 360° del microbioma, garantizando precisión y fiabilidad.[span_34](end_span)</li>
-                [span_35](start_span)<li>Soluciones aplicables, No Solo Datos: Transformamos la complejidad científica en recomendaciones prácticas y personalizadas que impactan directamente en la eficiencia, productividad y rentabilidad de su explotación.[span_35](end_span)</li>
-                [span_36](start_span)<li>Enfoque en la Sostenibilidad: Contribuimos a una agricultura más ecológica y resiliente, reduciendo la huella ambiental y respondiendo a las demandas de un mercado consciente.[span_36](end_span)</li>
-                [span_37](start_span)<li>Adaptabilidad y Alcance Amplio: Aunque nacidos en el sur de España, nuestros servicios están diseñados para ser aplicables a cualquier tipo de agricultura intensiva, con potencial de expansión global.[span_37](end_span)</li>
-                [span_38](start_span)<li>Garantía de Calidad Biológica: Ofrecemos un control microbiológico riguroso para insumos y productos, añadiendo una capa de confianza y seguridad a su cadena de valor.[span_38](end_span)</li>
+                <li>Conocimiento Científico Profundo: Un equipo con formación de alto nivel en las disciplinas más relevantes (biotecnología, bioquímica, bioinformática y ciencias ambientales) para ofrecer una perspectiva única y rigurosa.</li>
+                <li>Tecnología de Vanguardia y Métodos Exhaustivos: Combinamos las técnicas moleculares más avanzadas (metabarcoding) con métodos cultivables tradicionales para una visión 360° del microbioma, garantizando precisión y fiabilidad.</li>
+                <li>Soluciones aplicables, No Solo Datos: Transformamos la complejidad científica en recomendaciones prácticas y personalizadas que impactan directamente en la eficiencia, productividad y rentabilidad de su explotación.</li>
+                <li>Enfoque en la Sostenibilidad: Contribuimos a una agricultura más ecológica y resiliente, reduciendo la huella ambiental y respondiendo a las demandas de un mercado consciente.</li>
+                <li>Adaptabilidad y Alcance Amplio: Aunque nacidos en el sur de España, nuestros servicios están diseñados para ser aplicables a cualquier tipo de agricultura intensiva, con potencial de expansión global.</li>
+                <li>Garantía de Calidad Biológica: Ofrecemos un control microbiológico riguroso para insumos y productos, añadiendo una capa de confianza y seguridad a su cadena de valor.</li>
             </ul>
         </div>
     </section>
 
     <section id="contacto" class="section section-colored-1">
         <div class="section-content">
-            [span_39](start_span)<h2>Contacto</h2>[span_39](end_span)
-            [span_40](start_span)<p>¿Listo para descubrir el potencial oculto de su suelo y optimizar su producción?[span_40](end_span)</p>
-            [span_41](start_span)<p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.[span_41](end_span)</p>
+            <h2>Contacto</h2>
+            <p>¿Listo para descubrir el potencial oculto de su suelo y optimizar su producción?</p>
+            <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.</p>
 
             <hr>
 
@@ -585,8 +585,8 @@
                 </div>
 
             <div class="contact-info">
-                [span_42](start_span)<p>Email: aedifco@proton.me[span_42](end_span) | [span_43](start_span)Ubicación: Almería, España.[span_43](end_span)</p>
-                [span_44](start_span)<p>*(Próximamente: Más información detallada sobre nuestros servicios y proyectos en BioInCode.com)*[span_44](end_span)</p>
+                <p>Email: aedifco@proton.me | Ubicación: Almería, España.</p>
+                <p>*(Próximamente: Más información detallada sobre nuestros servicios y proyectos en BioInCode.com)*</p>
             </div>
         </div>
     </section>
