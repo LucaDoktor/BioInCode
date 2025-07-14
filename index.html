@@ -258,6 +258,74 @@
             margin: 40px 0;
         }
 
+        /* Estilos para el formulario de contacto */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            background-color: var(--color-background-light);
+        }
+
+        .contact-form label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--color-black-text);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            color: var(--color-text-dark);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--color-primary-green);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* Permite redimensionar verticalmente */
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: var(--color-primary-green);
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: auto;
+            align-self: center; /* Centra el botón */
+            margin-top: 15px;
+        }
+
+        .contact-form button:hover {
+            background-color: #43A047; /* Un verde un poco más oscuro */
+            transform: translateY(-2px);
+        }
+
         /* Estilos responsivos adicionales */
         @media (max-width: 768px) {
             .container {
@@ -275,6 +343,12 @@
             }
             .services-image img {
                 margin: 20px auto 30px auto;
+            }
+            .contact-form {
+                padding: 15px;
+            }
+            .contact-form button {
+                width: 100%; /* Botón de ancho completo en móvil */
             }
         }
     </style>
@@ -316,7 +390,7 @@
             <div class="services-image">
                 <img src="IMG_7433.jpeg" alt="Esquema de servicios de BioInAgro">
             </div>
-            <p>Utilizamos herramientas avanzadas de bioinformática y técnicas de metabarcoding para analizar el ADN de los miles de millones de microorganismos que habitan en su suelo y en sus plantas. Transformamos datos genéticos complejos en información clara y soluciones prácticas para su explotación agrícola.</p>
+            <p>Utilizamos herramientas avanzadas de bioinformática y técnicas de metabarcoding para analizar el ADN de los miles de miles de millones de microorganismos que habitan en su suelo y en sus plantas. Transformamos datos genéticos complejos en información clara y soluciones prácticas para su explotación agrícola.</p>
             <p>Su suelo habla, y nosotros le ayudamos a entenderlo. La tierra bajo sus pies es un ecosistema vivo, un universo microscópico de bacterias, hongos y otros organismos que influyen directamente en todo, desde la absorción de nutrientes hasta la resistencia a enfermedades.</p>
         </section>
 
@@ -341,10 +415,24 @@
             <p>¿Listo para descubrir el potencial oculto de su suelo?</p>
             <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInAgro puede transformar su agricultura.</p>
 
-            <hr> <h3>Manténgase Informado</h3>
+            <hr>
+
+            <h3>Manténgase Informado</h3>
             <p>Suscríbase a nuestra lista de correo para recibir las últimas noticias, avances y ofertas especiales de BioInAgro directamente en su bandeja de entrada.</p>
 
             <div class="newsletter-form-container">
+                <form action="https://formspree.io/f/mjkobaqw" method="POST" class="contact-form">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required placeholder="Su nombre completo">
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="su.email@ejemplo.com">
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" name="message" required placeholder="Escriba aquí su consulta o mensaje..."></textarea>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
                 </div>
 
             <div class="contact-info">
@@ -367,13 +455,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar a');
-            const navbarLinksContainer = document.getElementById('nav-list'); // Usar nav-list aquí
+            const navbarLinksContainer = document.getElementById('nav-list');
 
             function highlightNavOnScroll() {
                 let current = '';
                 sections.forEach(sec => {
                     // Ajuste para que la sección se active un poco antes de llegar a ella
-                    const sectionTop = sec.offsetTop - (window.innerHeight / 3); 
+                    const sectionTop = sec.offsetTop - (window.innerHeight / 3);
                     const sectionHeight = sec.clientHeight;
                     if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
                         current = sec.getAttribute('id');
@@ -382,7 +470,6 @@
 
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    // Asegúrate de que el href del enlace coincide con el ID de la sección
                     if (link.href.includes(current)) {
                         link.classList.add('active');
                     }
@@ -392,8 +479,7 @@
             // Función para cerrar el menú móvil al hacer clic en un enlace
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                    // Solo si estamos en móvil y el menú está abierto
-                    if (window.innerWidth <= 768 && navbarLinksContainer.classList.contains('active')) { 
+                    if (window.innerWidth <= 768 && navbarLinksContainer.classList.contains('active')) {
                         navbarLinksContainer.classList.remove('active');
                     }
                 });
