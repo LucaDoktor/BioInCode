@@ -1,645 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BioInCode: Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.">
+    <meta name="author" content="BioInCode">
     <title>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Variables CSS para colores (ajustados a pastel cremoso) */
-        :root {
-            --color-primary-green: #6CBE8F; /* Soft, creamy pastel green */
-            --color-primary-blue: #9FB8D0;  /* Soft, creamy pastel blue */
-            --color-text-dark: #333;
-            --color-text-light: #555;
-            --color-background-light: #fdfdfd; /* Lighter background */
-            --color-border: #e0e0e0;
-            --color-highlight: #e9f5ee; /* Soft highlight for active elements/borders */
-            --color-black-text: #000;
 
-            /* Colores de sección (verde pastel cremoso y azul pastel cremoso) */
-            --section-color-1: #f0f8f0; /* Very light, creamy green */
-            --section-color-2: #edf5f9; /* Very light, creamy blue */
-            --section-color-3: #fcfcfc; /* Near white for a creamy feel */
-            --section-color-4: #f7eff7; /* Very light, creamy lilac/purple for variety, but still pastel */
-        }
+    <link rel="icon" href="assets/images/favicon.png" type="image/png"> <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
-        html {
-            scroll-behavior: smooth; /* Smooth scroll for section jumps */
-        }
+    <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
+    <link rel="stylesheet" href="assets/css/style.css"> </head>
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            color: var(--color-text-dark);
-            background-color: var(--color-background-light);
-        }
-
-        /* NAVBAR */
-        .navbar {
-            background-color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            text-align: center;
-        }
-
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .navbar li {
-            margin: 0 15px;
-        }
-
-        .navbar a {
-            text-decoration: none;
-            color: var(--color-black-text);
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.05em;
-            padding: 5px 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--color-primary-green);
-            transition: width 0.3s ease-in-out;
-        }
-
-        .navbar a:hover::after,
-        .navbar a.active::after {
-            width: 100%;
-        }
-
-        .navbar a:hover {
-            color: var(--color-primary-green);
-        }
-
-        /* Estilos del botón de hamburguesa y menú móvil */
-        .menu-toggle {
-            display: none; /* Oculto por defecto en escritorio */
-            font-size: 2em;
-            cursor: pointer;
-            color: var(--color-black-text);
-            padding: 10px 20px;
-            text-align: right; /* Alineado a la derecha en móvil */
-            width: 100%;
-            box-sizing: border-box; /* Incluir padding en el ancho */
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0; /* Ajustar padding para móvil */
-            }
-            .menu-toggle {
-                display: block; /* Mostrar botón de hamburguesa en móvil */
-            }
-            .navbar ul {
-                flex-direction: column; /* Apilar ítems en móvil */
-                display: none; /* Oculto por defecto, se mostrará con JS */
-                width: 100%;
-                background-color: #fff;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            }
-            .navbar ul.active { /* Clase para mostrar el menú */
-                display: flex;
-            }
-            .navbar li {
-                margin: 0; /* Eliminar margen horizontal */
-                border-bottom: 1px solid var(--color-border); /* Separador entre ítems */
-            }
-            .navbar li:last-child {
-                border-bottom: none;
-            }
-            .navbar a {
-                display: block; /* Ocupar todo el ancho del li */
-                padding: 15px 20px; /* Más padding para facilitar el toque */
-                text-align: left;
-            }
-            .navbar a::after { /* Quitar el subrayado en móvil para simplicidad */
-                display: none;
-            }
-            .navbar a.active {
-                background-color: var(--color-highlight); /* Fondo para el activo en móvil */
-            }
-        }
-
-        /* CONTENIDO PRINCIPAL - Actualizado para secciones y colores */
-        .section {
-            padding: 60px 0; /* Generous padding for sections, no horizontal padding here */
-            margin: 0; /* Remove default margin */
-            border-bottom: 1px solid var(--color-border); /* Separator between sections */
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
-        }
-
-        .section-colored-1 {
-            background-color: var(--section-color-1);
-        }
-
-        .section-colored-2 {
-            background-color: var(--section-color-2);
-        }
-
-        .section-colored-3 {
-            background-color: var(--section-color-3);
-        }
-
-        .section-colored-4 {
-            background-color: var(--section-color-4);
-        }
-
-        .section-content {
-            max-width: 900px;
-            margin: 0 auto; /* Center the content within the colored section */
-            background-color: #fff; /* White background for content within colored sections */
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            padding: 40px;
-        }
-
-        .header-section {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .logo {
-            margin-bottom: 25px;
-        }
-
-        .logo img {
-            max-width: 320px; /* Tamaño del logo DOBLE (160px * 2) */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.4em;
-            color: var(--color-black-text);
-            text-align: center;
-            margin-bottom: 10px;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-
-        .tagline {
-            font-size: 1.2em;
-            color: var(--color-text-light);
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 30px;
-        }
-
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            color: var(--color-black-text);
-            border-bottom: 2px solid var(--color-highlight);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.4em;
-            color: var(--color-black-text);
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 1em;
-            color: var(--color-black-text);
-            text-align: justify;
-        }
-
-        p strong {
-            color: var(--color-black-text);
-            font-weight: bold;
-        }
-
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-
-        li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            color: var(--color-black-text);
-        }
-
-        li::before {
-            content: '•';
-            color: var(--color-primary-green);
-            font-size: 1.2em;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        a {
-            color: var(--color-primary-blue);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-primary-green);
-            text-decoration: underline; /* Mantener el subrayado en hover para claridad */
-        }
-
-        .services-image img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 30px auto 50px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .contact-info {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 1px solid var(--color-border);
-            font-size: 0.95em;
-            color: var(--color-text-light);
-        }
-
-        hr {
-            border: 0;
-            height: 1px;
-            background: var(--color-border);
-            margin: 40px 0;
-        }
-
-        /* Estilos para el formulario de contacto */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-            padding: 20px;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            background-color: var(--color-background-light);
-        }
-
-        .contact-form label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--color-black-text);
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid var(--color-border);
-            border-radius: 6px;
-            box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
-            font-family: 'Roboto', sans-serif;
-            font-size: 1em;
-            color: var(--color-text-dark);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contact-form input[type="text"]:focus,
-        .contact-form input[type="email"]:focus,
-        .contact-form textarea:focus {
-            border-color: var(--color-primary-green);
-            box-shadow: 0 0 0 3px rgba(108, 190, 143, 0.2); /* Adjust shadow color to new green */
-            outline: none;
-        }
-
-        .contact-form textarea {
-            resize: vertical; /* Permite redimensionar verticalmente */
-            min-height: 120px;
-        }
-
-        .contact-form button {
-            background-color: var(--color-primary-green);
-            color: white;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            width: auto;
-            align-self: center; /* Centra el botón */
-            margin-top: 15px;
-        }
-
-        .contact-form button:hover {
-            background-color: #5BA87C; /* A slightly darker pastel green for hover */
-            transform: translateY(-2px);
-        }
-
-        /* Estilos para desplegables (details/summary) */
-        details {
-            background-color: var(--color-background-light);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            margin-bottom: 15px;
-            padding: 15px 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: background-color 0.3s ease;
-        }
-
-        details[open] {
-            background-color: #fff; /* White when open */
-        }
-
-        summary {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: var(--color-primary-blue);
-            cursor: pointer;
-            outline: none;
-            padding: 5px 0;
-            display: block; /* Make summary take full width */
-            position: relative;
-            user-select: none; /* Prevent text selection on click */
-        }
-
-        summary::marker {
-            display: none; /* Hide default triangle */
-        }
-
-        summary::before {
-            content: '+ '; /* Custom plus icon */
-            display: inline-block;
-            margin-right: 10px;
-            color: var(--color-primary-green);
-            font-weight: bold;
-            transition: transform 0.2s ease;
-        }
-
-        details[open] summary::before {
-            content: '- '; /* Custom minus icon when open */
-            transform: rotate(0deg); /* No rotation needed for simple plus/minus */
-        }
-
-        details p, details ul, details li {
-            padding-left: 20px; /* Indent content within details */
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        /* Estilos responsivos adicionales */
-        @media (max-width: 768px) {
-            .section {
-                padding: 30px 0; /* Adjusted padding for smaller screens */
-            }
-            .section-content {
-                margin: 0 20px; /* Add some horizontal margin for smaller screens */
-                padding: 25px;
-                border-radius: 12px; /* Keep border-radius for consistency */
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Keep shadow for consistency */
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .tagline {
-                font-size: 1em;
-            }
-            .services-image img {
-                margin: 20px auto 30px auto;
-            }
-            .contact-form {
-                padding: 15px;
-            }
-            .contact-form button {
-                width: 100%; /* Botón de ancho completo en móvil */
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-
-    <nav class="navbar">
-        <ul id="nav-list">
-            <li><a href="#inicio" class="active">Inicio</a></li>
-            <li><a href="#quienes-somos">Quiénes Somos</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#por-que-elegirnos">Por Qué Elegirnos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-
-    <section id="inicio" class="section section-colored-1">
-        <div class="section-content header-section">
-            <div class="logo">
-                <img src="IMG_7431.jpeg" alt="Logo BioInCode">
+<body class="home-page">
+    <div class="navbar navbar-inverse navbar-fixed-top headroom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/IMG_7431.jpeg" alt="BioInCode Logo"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Quiénes Somos</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div></div>
+    </div>
+    <header id="head" class="home-header">
+        <div class="container">
+            <div class="logo-hero">
+                <img src="assets/images/IMG_7431.jpeg" alt="Logo BioInCode">
             </div>
             <h1>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</h1>
             <p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.</p>
         </div>
-    </section>
-
-    <section id="quienes-somos" class="section section-colored-2">
-        <div class="section-content">
-            <h2>Quiénes Somos</h2>
-            <p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola. Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos.</p>
-            <p>BioInCode es una empresa de biotecnología agrícola fundada por profesionales cualificados del sector, especializados en biotecnología, bioquímica y bioinformática. Nuestro propósito es desvelar el "código biológico" de suelos, plantas y productos agrícolas a través de análisis microbiológicos avanzados, ofreciendo soluciones para optimizar la producción, la sostenibilidad y la calidad en la agricultura. Estamos aquí para cerrar la brecha entre la investigación de vanguardia y la aplicación práctica en su finca.</p>
+    </header>
+    <div class="container main-content-wrapper">
+        <div class="row">
+            <article class="col-sm-12 maincontent">
+                <p>Bienvenido a BioInCode, donde convertimos la complejidad del mundo microbiano en soluciones prácticas para su explotación agrícola. Nuestro equipo de expertos en biotecnología, bioquímica y bioinformática se dedica a desvelar el "código biológico" de suelos, plantas y productos agrícolas a través de análisis microbiológicos avanzados. Nuestro objetivo es optimizar su producción, fomentar la sostenibilidad y garantizar la calidad en la agricultura del futuro.</p>
+                <p>Explore nuestras secciones para conocer más sobre quiénes somos, nuestros servicios innovadores y cómo podemos ser su aliado estratégico para una agricultura más eficiente y sostenible.</p>
+            </article>
         </div>
-    </section>
+    </div>
+    <footer id="footer" class="top-space">
+        <div class="footer1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 panel">
+                        <h3 class="panel-title">Acerca de BioInCode</h3>
+                        <div class="panel-body">
+                            <p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola. Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos. </p>
+                        </div>
+                    </div>
 
-    <section id="servicios" class="section section-colored-3">
-        <div class="section-content">
-            <h2>Nuestra Oferta de Servicios: Precisión Biológica para su Cultivo y Productos</h2>
-            <p>En BioInCode, transformamos la complejidad del mundo microbiano en conocimiento práctico. Nuestros servicios se centran en el análisis avanzado y la consultoría, proporcionando información crucial para la toma de decisiones estratégicas.</p>
+                    <div class="col-md-4 panel contact">
+                        <h3 class="panel-title">Información de Contacto</h4>
+                        <div class="panel-body">
+                        <p>Contáctenos hoy mismo para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.</p>
+                        <ul>
+                            <li><a href="mailto:aedifco@proton.me"><i class="fa fa-envelope-o"></i> aedifco@proton.me</a></li>
+                            <li><i class="fa fa-map-marker"></i> Almería, España</li>
+                        </ul>
+                        </div>
+                    </div>
 
-            <h3>1. Diagnóstico Integral del Microbioma de Suelos y Plantas</h3>
-            <p>Comprenda la verdadera salud y el potencial biológico de su sistema suelo-planta.</p>
+                    <div class="col-md-3 panel">
+                        <h3 class="panel-title">Síguenos</h3>
+                        <div class="panel-body">
+                            <p class="follow-me-icons">
+                                <a href=""><i class="fa fa-twitter fa-2"></i></a>
+                                <a href=""><i class="fa fa-linkedin fa-2"></i></a>
+                                <a href=""><i class="fa fa-facebook fa-2"></i></a>
+                            </p>
+                        </div>
+                    </div>
 
-            <details>
-                <summary>Análisis Molecular (Metabarcoding)</summary>
-                <ul>
-                    <li>Identificación de Diversidad Microbiana: Cuantificación y tipificación de comunidades bacterianas y fúngicas para evaluar la biodiversidad y el equilibrio del ecosistema (suelo, rizosfera, filosfera).</li>
-                    <li>Perfiles de Funcionalidad Potencial: Detección de grupos microbianos asociados a funciones clave como la fijación de nitrógeno, solubilización de fósforo, mineralización de materia orgánica, y biocontrol de patógenos.</li>
-                    <li>Detección de Patógenos y Bioindicadores: Identificación temprana de microorganismos causantes de enfermedades o aquellos que actúan como indicadores de estrés o desequilibrios.</li>
-                </ul>
-            </details>
-
-            <details>
-                <summary>Análisis Microbiológicos Cultivables</summary>
-                <ul>
-                    <li>Cuantificación de Grupos Funcionales: Recuento y aislamiento de bacterias y hongos totales, así como de grupos microbianos específicos implicados en el ciclo del nitrógeno, fósforo, hierro y otros nutrientes clave.</li>
-                    <li>Aislamiento y Caracterización de Microorganismos beneficiosos del suelo: Identificación de cepas prometedoras para futuras aplicaciones biotecnológicas.</li>
-                    <li>Evaluación de la Viabilidad Microbiana: Determinación de la cantidad de microorganismos activos y cultivables en una muestra.</li>
-                </ul>
-            </details>
-
-            <h3>2. Control de Calidad Microbiológico de Insumos y Productos Agrícolas</h3>
-            <p>Asegure la calidad y seguridad biológica de los productos que utiliza y comercializa.</p>
-
-            <details>
-                <summary>Detalles del Control de Calidad Microbiológico</summary>
-                <ul>
-                    <li>Análisis de Biofertilizantes y Biopesticidas: Verificación de la composición microbiana declarada, viabilidad y ausencia de contaminantes en formulaciones comerciales.</li>
-                    <li>Monitoreo de Compost y Materia Orgánica: Evaluación de la calidad microbiológica y madurez de enmiendas orgánicas antes de su aplicación en campo.</li>
-                    <li>Control Microbiológico de Aguas de Riego: Detección de microorganismos indicadores de contaminación final que puedan afectar la salud del cultivo o la seguridad alimentaria.</li>
-                    <li>Análisis Microbiológico de Productos Agrícolas Frescos: Evaluación de la carga microbiana en frutas, verduras y otros productos para asegurar el cumplimiento de estándares de seguridad alimentaria y prolongar la vida útil.</li>
-                </ul>
-            </details>
-
-            <h3>3. Consultoría y Desarrollo de Estrategias Biológicas Personalizadas</h3>
-            <p>Transformamos los datos complejos en estrategias aplicables y soporte técnico continuo.</p>
-
-            <details>
-                <summary>Detalles de Consultoría y Estrategias</summary>
-                <ul>
-                    <li>Asesoramiento Estratégico: Interpretación detallada de los resultados de análisis para el diseño de planes de manejo agrícola optimizados, desde la fertilización hasta el control de plagas y enfermedades.</li>
-                    <li>Optimización de Programas de Nutrición: Basado en el perfil microbiológico del suelo, se desarrollan recomendaciones para reducir la dependencia de insumos químicos y potenciar procesos biológicos.</li>
-                    <li>Diseño y Seguimiento de Ensayos: Colaboración en la planificación y evaluación de pruebas de campo para validar la eficacia de nuevas prácticas agrícolas, bioinsumos o productos.</li>
-                    <li>Formación y Capacitación: Ofrecemos talleres y cursos personalizados para equipos técnicos y agricultores sobre los principios del microbioma, la interpretación de análisis y la implementación de soluciones biológicas.</li>
-                </ul>
-            </details>
-            <div class="services-image">
-                <img src="IMG_7433.jpeg" alt="Esquema de servicios de BioInCode">
-            </div>
+                </div> </div>
         </div>
-    </section>
 
-    <section id="por-que-elegirnos" class="section section-colored-4">
-        <div class="section-content">
-            <h2>¿Por Qué Elegir BioInCode? Nuestro Valor Añadido</h2>
-            <p>En un sector agrícola cada vez más exigente, BioInCode se posiciona como su aliado estratégico:</p>
-            <details>
-                <summary>Nuestros Valores Clave</summary>
-                <ul>
-                    <li>Conocimiento Científico Profundo: Un equipo con formación de alto nivel en las disciplinas más relevantes (biotecnología, bioquímica, bioinformática y ciencias ambientales) para ofrecer una perspectiva única y rigurosa.</li>
-                    <li>Tecnología de Vanguardia y Métodos Exhaustivos: Combinamos las técnicas moleculares más avanzadas (metabarcoding) con métodos cultivables tradicionales para una visión 360° del microbioma, garantizando precisión y fiabilidad.</li>
-                    <li>Soluciones aplicables, No Solo Datos: Transformamos la complejidad científica en recomendaciones prácticas y personalizadas que impactan directamente en la eficiencia, productividad y rentabilidad de su explotación.</li>
-                    <li>Enfoque en la Sostenibilidad: Contribuimos a una agricultura más ecológica y resiliente, reduciendo la huella ambiental y respondiendo a las demandas de un mercado consciente.</li>
-                    <li>Adaptabilidad y Alcance Amplio: Aunque nacidos en el sur de España, nuestros servicios están diseñados para ser aplicables a cualquier tipo de agricultura intensiva, con potencial de expansión global.</li>
-                    <li>Garantía de Calidad Biológica: Ofrecemos un control microbiológico riguroso para insumos y productos, añadiendo una capa de confianza y seguridad a su cadena de valor.</li>
-                </ul>
-            </details>
+        <div class="footer2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="simplenav">
+                                <a href="index.html">Inicio</a> |
+                                <a href="about.html">Quiénes Somos</a> |
+                                <a href="services.html">Servicios</a> |
+                                <a href="contact.html">Contacto</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 panel">
+                        <div class="panel-body">
+                            <p class="text-right">
+                                Copyright &copy; 2024 BioInCode. Todos los derechos reservados.
+                            </p>
+                        </div>
+                    </div>
+                </div> </div>
         </div>
-    </section>
+    </footer>
 
-    <section id="contacto" class="section section-colored-1">
-        <div class="section-content">
-            <h2>Contacto</h2>
-            <p>¿Listo para descubrir el potencial oculto de su suelo y optimizar su producción?</p>
-            <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.</p>
-
-            <hr>
-
-            <h3>Manténgase Informado</h3>
-            <p>Suscríbase a nuestra lista de correo para recibir las últimas noticias, avances y ofertas especiales de BioInCode directamente en su bandeja de entrada.</p>
-
-            <div class="newsletter-form-container">
-                <form action="https://formspree.io/f/mjkobaqw" method="POST" class="contact-form">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required placeholder="Su nombre completo">
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="_replyto" required placeholder="su.email@ejemplo.com">
-
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" required placeholder="Escriba aquí su consulta o mensaje..."></textarea>
-
-                    <button type="submit">Enviar Mensaje</button>
-                </form>
-                </div>
-
-            <div class="contact-info">
-                <p>Email: aedifco@proton.me | Ubicación: Almería, España.</p>
-                <p>*(Próximamente: Más información detallada sobre nuestros servicios y proyectos en BioInCode.com)*</p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const toggleButton = document.getElementById('menu-toggle');
-        const navList = document.getElementById('nav-list');
-
-        // Toggle del menú en móvil
-        toggleButton.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-
-        // Script para activar el estilo de "active" en la navbar al hacer scroll y cerrar menú móvil
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.navbar a');
-            const navbarLinksContainer = document.getElementById('nav-list');
-
-            function highlightNavOnScroll() {
-                let current = '';
-                sections.forEach(sec => {
-                    // Ajuste para que la sección se active un poco antes de llegar a ella
-                    const sectionTop = sec.offsetTop - (window.innerHeight / 3);
-                    const sectionHeight = sec.clientHeight;
-                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                        current = sec.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.href.includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            // Función para cerrar el menú móvil al hacer clic en un enlace
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768 && navbarLinksContainer.classList.contains('active')) {
-                        navbarLinksContainer.classList.remove('active');
-                    }
-                });
-            });
-
-            window.addEventListener('scroll', highlightNavOnScroll);
-            highlightNavOnScroll(); // Llama una vez al cargar para establecer el activo inicial
-        });
-    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="assets/js/headroom.min.js"></script>
+    <script src="assets/js/jQuery.headroom.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 </body>
 </html>
