@@ -1,393 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <style>
-        /* Variables CSS para colores */
-        :root {
-            --color-primary-green: #4CAF50; /* Verde principal, similar al logo */
-            --color-primary-blue: #2196F3;  /* Azul principal, similar al logo */
-            --color-text-dark: #333;       /* Texto oscuro principal */
-            --color-text-light: #555;      /* Texto secundario */
-            --color-background-light: #f9f9f9; /* Fondo claro */
-            --color-border: #e0e0e0;       /* Color de borde */
-            --color-highlight: #e8f5e9;    /* Para resaltar secciones */
-            --color-black-text: #000;      /* Nuevo: Texto en negro */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary-green: #4CAF50;
+      --color-primary-blue: #2196F3;
+      --color-text-dark: #333;
+      --color-text-light: #555;
+      --color-background-light: #f9f9f9;
+      --color-border: #e0e0e0;
+      --color-highlight: #e8f5e9;
+      --color-black-text: #000;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif; /* Fuente más legible para el cuerpo */
-            line-height: 1.7; /* Interlineado mejorado */
-            margin: 0;
-            padding: 0;
-            color: var(--color-text-dark);
-            background-color: var(--color-background-light);
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      color: var(--color-text-dark);
+      background-color: var(--color-background-light);
+    }
 
-        /* Barra de navegación */
-        .navbar {
-            background-color: #fff;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky; /* Se mantiene fija al hacer scroll */
-            top: 0;
-            z-index: 1000; /* Asegura que esté por encima de otros elementos */
-            text-align: center;
-        }
+    /* NAVBAR */
+    .navbar {
+      background-color: #fff;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      text-align: center;
+    }
 
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex; /* Para que los ítems estén en línea en escritorio */
-            justify-content: center; /* Centrar los ítems de navegación */
-            flex-wrap: wrap;
-        }
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .navbar li {
-            margin: 0 15px;
-        }
+    .navbar li {
+      margin: 0 15px;
+    }
 
-        .navbar a {
-            text-decoration: none;
-            color: var(--color-black-text); /* Texto de la navbar en negro */
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.05em;
-            padding: 5px 0;
-            position: relative; /* Para el efecto de subrayado */
-            transition: color 0.3s ease;
-        }
+    .navbar a {
+      text-decoration: none;
+      color: var(--color-black-text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.05em;
+      padding: 5px 0;
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-        .navbar a::after { /* Efecto de subrayado al pasar el ratón */
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--color-primary-green); /* Subrayado verde */
-            transition: width 0.3s ease-in-out;
-        }
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--color-primary-green);
+      transition: width 0.3s ease-in-out;
+    }
 
-        .navbar a:hover::after,
-        .navbar a.active::after { /* Subrayado para el elemento activo */
-            width: 100%;
-        }
+    .navbar a:hover::after,
+    .navbar a.active::after {
+      width: 100%;
+    }
 
-        .navbar a:hover {
-            color: var(--color-primary-green); /* Cambio de color al pasar el ratón */
-        }
+    .navbar a:hover {
+      color: var(--color-primary-green);
+    }
 
-        /* Estilos del botón de hamburguesa y menú móvil */
-        .menu-toggle {
-            display: none; /* Oculto por defecto en escritorio */
-            font-size: 2em;
-            cursor: pointer;
-            color: var(--color-black-text);
-            padding: 10px 20px;
-            text-align: right; /* Alineado a la derecha en móvil */
-            width: 100%;
-            box-sizing: border-box; /* Incluir padding en el ancho */
-        }
+    .menu-toggle {
+      display: none;
+      font-size: 2em;
+      cursor: pointer;
+      color: var(--color-black-text);
+      padding: 10px 20px;
+      text-align: right;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0; /* Ajustar padding para móvil */
-            }
-            .menu-toggle {
-                display: block; /* Mostrar botón de hamburguesa en móvil */
-            }
-            .navbar ul {
-                flex-direction: column; /* Apilar ítems en móvil */
-                display: none; /* Oculto por defecto, se mostrará con JS */
-                width: 100%;
-                background-color: #fff;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            }
-            .navbar ul.active { /* Clase para mostrar el menú */
-                display: flex;
-            }
-            .navbar li {
-                margin: 0; /* Eliminar margen horizontal */
-                border-bottom: 1px solid var(--color-border); /* Separador entre ítems */
-            }
-            .navbar li:last-child {
-                border-bottom: none;
-            }
-            .navbar a {
-                display: block; /* Ocupar todo el ancho del li */
-                padding: 15px 20px; /* Más padding para facilitar el toque */
-                text-align: left;
-            }
-            .navbar a::after { /* Quitar el subrayado en móvil para simplicidad */
-                display: none;
-            }
-            .navbar a.active {
-                background-color: var(--color-highlight); /* Fondo para el activo en móvil */
-            }
-        }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
 
+      .navbar ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
 
-        .container {
-            max-width: 900px; /* Ancho un poco mayor */
-            margin: 50px auto; /* Márgenes superiores e inferiores generosos */
-            padding: 40px; /* Más padding interno */
-            background-color: #fff;
-            border-radius: 12px; /* Bordes más redondeados */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra más suave y extendida */
-        }
+      .navbar ul.active {
+        display: flex;
+      }
 
-        .header-section {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--color-border);
-        }
+      .navbar li {
+        margin: 0;
+        border-bottom: 1px solid var(--color-border);
+      }
 
-        .logo {
-            margin-bottom: 25px;
-        }
-        .logo img {
-            max-width: 160px; /* Tamaño del logo un poco más pequeño para elegancia */
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
+      .navbar li:last-child {
+        border-bottom: none;
+      }
 
-        h1 {
-            font-family: 'Montserrat', sans-serif; /* Fuente destacada para títulos */
-            font-size: 2.4em; /* Tamaño del título principal */
-            color: var(--color-black-text); /* Títulos en negro */
-            text-align: center;
-            margin-bottom: 10px;
-            line-height: 1.3; /* Interlineado ajustado */
-            font-weight: 700; /* Negrita más fuerte */
-        }
+      .navbar a {
+        display: block;
+        padding: 15px 20px;
+        text-align: left;
+      }
 
-        .tagline {
-            font-size: 1.2em;
-            color: var(--color-text-light);
-            text-align: center;
-            margin-top: 5px;
-            margin-bottom: 30px;
-        }
+      .navbar a::after {
+        display: none;
+      }
 
-        h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em; /* Tamaño de los subtítulos */
-            color: var(--color-black-text); /* Subtítulos en negro */
-            border-bottom: 2px solid var(--color-highlight); /* Línea más marcada y con color */
-            padding-bottom: 8px;
-            margin-top: 40px; /* Más espacio antes de los subtítulos */
-            margin-bottom: 20px;
-            font-weight: 600; /* Negrita */
-        }
+      .navbar a.active {
+        background-color: var(--color-highlight);
+      }
+    }
 
-        p {
-            margin-bottom: 1em;
-            color: var(--color-black-text); /* Párrafos en negro */
-            text-align: justify; /* Texto justificado para bloques de párrafo */
-        }
-        p strong {
-            color: var(--color-black-text); /* Negritas en negro */
-            font-weight: bold; /* Asegurar negrita */
-        }
+    /* CONTENIDO PRINCIPAL */
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
 
+    .header-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--color-border);
+    }
 
-        ul {
-            list-style-type: none; /* Quitamos las viñetas por defecto */
-            padding-left: 0;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-        li {
-            position: relative;
-            padding-left: 25px; /* Espacio para la viñeta personalizada */
-            margin-bottom: 12px; /* Más espacio entre ítems */
-            color: var(--color-black-text); /* Ítems de lista en negro */
-        }
-        li::before {
-            content: '•'; /* Viñeta personalizada (punto) */
-            color: var(--color-primary-green); /* Color de la viñeta */
-            font-size: 1.2em;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+    .logo {
+      margin-bottom: 25px;
+    }
 
-        a {
-            color: var(--color-primary-blue);
-            text-decoration: none;
-            transition: color 0.3s ease; /* Transición suave al pasar el ratón */
-        }
-        a:hover {
-            color: var(--color-primary-green); /* Cambio de color al pasar el ratón */
-            text-decoration: underline;
-        }
+    .logo img {
+      max-width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
-        .services-image img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 30px auto 50px auto; /* Centrar y añadir buen margen */
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4em;
+      color: var(--color-black-text);
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 1.3;
+      font-weight: 700;
+    }
 
-        .contact-info {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 1px solid var(--color-border);
-            font-size: 0.95em;
-            color: var(--color-text-light);
-        }
+    .tagline {
+      font-size: 1.2em;
+      color: var(--color-text-light);
+      text-align: center;
+      margin-top: 5px;
+      margin-bottom: 30px;
+    }
 
-        hr { /* Línea divisoria, más sutil */
-            border: 0;
-            height: 1px;
-            background: var(--color-border);
-            margin: 40px 0;
-        }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8em;
+      color: var(--color-black-text);
+      border-bottom: 2px solid var(--color-highlight);
+      padding-bottom: 8px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
 
-        /* Estilos responsivos básicos */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 25px;
-            }
-            h1 {
-                font-size: 1.8em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .tagline {
-                font-size: 1em;
-            }
-            .services-image img {
-                margin: 20px auto 30px auto;
-            }
-        }
-    </style>
+    p {
+      margin-bottom: 1em;
+      color: var(--color-black-text);
+      text-align: justify;
+    }
+
+    p strong {
+      color: var(--color-black-text);
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: var(--color-black-text);
+    }
+
+    li::before {
+      content: '•';
+      color: var(--color-primary-green);
+      font-size: 1.2em;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    a {
+      color: var(--color-primary-blue);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--color-primary-green);
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="menu-toggle" id="mobile-menu">
-            &#9776; </div>
-        <ul id="navbar-links">
-            <li><a href="#inicio" class="active">Inicio</a></li>
-            <li><a href="#quienes-somos">Quiénes Somos</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#por-que-elegirnos">Por Qué Elegirnos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
 
-    <div class="container">
-        <section id="inicio" class="header-section">
-            <div class="logo">
-                <img src="IMG_7431.jpeg" alt="Logo BioInAgro">
-            </div>
-            <h1>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</h1>
-            <p class="tagline">Análisis biológico avanzado para la sostenibilidad y productividad agrícola.</p>
-        </section>
+  <!-- Botón de menú hamburguesa -->
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
-        <section id="quienes-somos">
-            <h2>Quiénes Somos</h2>
-            <p>Bienvenido/a a BioInAgro: Innovación en análisis biológico para la agricultura moderna.</p>
-            <p>En BioInAgro, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo de profesionales cualificados del sector con sede en el sur de España, apasionados por desvelar el "código biológico" que impulsa la salud y la productividad de sus cultivos.</p>
-            <p>Nuestra experiencia académica y nuestra pasión por la bioinformática nos permiten ofrecer un servicio de análisis profundo y riguroso, adaptado a las necesidades específicas de la agricultura intensiva. Estamos aquí para cerrar la brecha entre la investigación puntera y la aplicación práctica en su finca.</p>
-        </section>
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <ul id="nav-list">
+      <li><a href="#" class="active">Inicio</a></li>
+      <li><a href="#">Sobre BioInAgro</a></li>
+      <li><a href="#">Investigación</a></li>
+      <li><a href="#">Equipo</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
 
-        <hr>
-
-        <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-image">
-                <img src="IMG_7433.jpeg" alt="Esquema de servicios de BioInAgro">
-            </div>
-            <p>Utilizamos herramientas avanzadas de bioinformática y técnicas de metabarcoding para analizar el ADN de los miles de millones de microorganismos que habitan en su suelo y en sus plantas. Transformamos datos genéticos complejos en información clara y soluciones prácticas para su explotación agrícola.</p>
-            <p>Su suelo habla, y nosotros le ayudamos a entenderlo. La tierra bajo sus pies es un ecosistema vivo, un universo microscópico de bacterias, hongos y otros organismos que influyen directamente en todo, desde la absorción de nutrientes hasta la resistencia a enfermedades.</p>
-        </section>
-
-        <hr>
-
-        <section id="por-que-elegirnos">
-            <h2>Por Qué Elegirnos</h2>
-            <p>Sabemos que la agricultura moderna busca optimizar cada recurso y maximizar su rentabilidad. BioInAgro le ofrece una ventaja competitiva al abordar desafíos clave:</p>
-            <ul>
-                <li>Rendimientos mejorados: Identificamos microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de sus cultivos.</li>
-                <li>Fertilización inteligente: Reducimos la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de su suelo para nutrir las plantas.</li>
-                <li>Salud vegetal preventiva: Detectamos desequilibrios microbianos o la presencia temprana de patógenos, permitiéndole actuar antes de que los problemas se agraven.</li>
-                <li>Sostenibilidad real: Apoyamos la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de sus suelos y cumpliendo con las demandas del mercado.</li>
-            </ul>
-            <p>Con BioInAgro, no solo obtiene datos; obtiene conocimiento accionable para tomar decisiones más informadas, eficientes y sostenibles en su día a día.</p>
-        </section>
-
-        <hr>
-
-        <section id="contacto">
-            <h2>Contáctenos</h2>
-            <p>¿Listo para descubrir el potencial oculto de su suelo?</p>
-            <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInAgro puede transformar su agricultura.</p>
-
-            <div class="contact-info">
-                <p>aedifco@proton.me | Ubicación: Sur de España</p>
-                <p>*(Próximamente: Más información sobre nuestros servicios en BioInCode.com)*</p>
-            </div>
-        </section>
+  <!-- Contenido principal -->
+  <div class="container">
+    <div class="header-section">
+      <div class="logo">
+         <img src="IMG_7431.jpeg" alt="Logo de BioInAgro" />
+      </div>
+      <h1>BioInAgro</h1>
+      <p class="tagline">Descifrando el microbioma, cultivando el futuro</p>
     </div>
 
-    <script>
-        // Script para el menú de hamburguesa
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            var navbarLinks = document.getElementById('navbar-links');
-            navbarLinks.classList.toggle('active');
-        });
+      <h2>Esquema del Proyecto</h2>
+<img src="IMG_7433.jpeg" alt="Esquema del proyecto BioInAgro" style="max-width:100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px;">
 
-        // Script para activar el estilo de "active" en la navbar al hacer scroll y cerrar menú móvil
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.navbar a');
-            const navbarLinksContainer = document.getElementById('navbar-links');
-            const menuToggle = document.getElementById('mobile-menu');
+    <h2>¿Qué es BioInAgro?</h2>
+    <p><strong>BioInAgro</strong> es una iniciativa centrada en la comprensión del microbioma agrícola con el objetivo de impulsar una agricultura más sostenible, eficiente y respetuosa con el medio ambiente.</p>
+    <p>Nos apoyamos en la ciencia de vanguardia para entender cómo interactúan los microorganismos en el suelo, las raíces y las plantas, y cómo podemos aprovechar esas relaciones para mejorar la producción agrícola sin comprometer la salud del planeta.</p>
+  </div>
 
-            function highlightNavOnScroll() {
-                let current = '';
-                sections.forEach(sec => {
-                    // Ajuste para que la sección se active un poco antes de llegar a ella
-                    const sectionTop = sec.offsetTop - (window.innerHeight / 3); 
-                    const sectionHeight = sec.clientHeight;
-                    if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                        current = sec.getAttribute('id');
-                    }
-                });
+  <!-- JavaScript para menú hamburguesa -->
+  <script>
+    const toggleButton = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.href.includes(current)) {
-                        link.classList.add('active');
-                    }
-                });
-            }
+    toggleButton.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
 
-            // Función para cerrar el menú móvil al hacer clic en un enlace
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) { // Solo si estamos en móvil
-                        navbarLinksContainer.classList.remove('active');
-                    }
-                });
-            });
-
-            window.addEventListener('scroll', highlightNavOnScroll);
-            highlightNavOnScroll(); // Llama una vez al cargar para establecer el activo inicial
-        });
-    </script>
 </body>
 </html>
