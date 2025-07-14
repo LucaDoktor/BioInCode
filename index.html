@@ -42,9 +42,9 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex; /* Para que los ítems estén en línea */
+            display: flex; /* Para que los ítems estén en línea en escritorio */
             justify-content: center; /* Centrar los ítems de navegación */
-            flex-wrap: wrap; /* Permite que los ítems se envuelvan en pantallas pequeñas */
+            flex-wrap: wrap;
         }
 
         .navbar li {
@@ -80,6 +80,55 @@
 
         .navbar a:hover {
             color: var(--color-primary-green); /* Cambio de color al pasar el ratón */
+        }
+
+        /* Estilos del botón de hamburguesa y menú móvil */
+        .menu-toggle {
+            display: none; /* Oculto por defecto en escritorio */
+            font-size: 2em;
+            cursor: pointer;
+            color: var(--color-black-text);
+            padding: 10px 20px;
+            text-align: right; /* Alineado a la derecha en móvil */
+            width: 100%;
+            box-sizing: border-box; /* Incluir padding en el ancho */
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0; /* Ajustar padding para móvil */
+            }
+            .menu-toggle {
+                display: block; /* Mostrar botón de hamburguesa en móvil */
+            }
+            .navbar ul {
+                flex-direction: column; /* Apilar ítems en móvil */
+                display: none; /* Oculto por defecto, se mostrará con JS */
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+            .navbar ul.active { /* Clase para mostrar el menú */
+                display: flex;
+            }
+            .navbar li {
+                margin: 0; /* Eliminar margen horizontal */
+                border-bottom: 1px solid var(--color-border); /* Separador entre ítems */
+            }
+            .navbar li:last-child {
+                border-bottom: none;
+            }
+            .navbar a {
+                display: block; /* Ocupar todo el ancho del li */
+                padding: 15px 20px; /* Más padding para facilitar el toque */
+                text-align: left;
+            }
+            .navbar a::after { /* Quitar el subrayado en móvil para simplicidad */
+                display: none;
+            }
+            .navbar a.active {
+                background-color: var(--color-highlight); /* Fondo para el activo en móvil */
+            }
         }
 
 
@@ -145,6 +194,7 @@
         }
         p strong {
             color: var(--color-black-text); /* Negritas en negro */
+            font-weight: bold; /* Asegurar negrita */
         }
 
 
@@ -222,18 +272,14 @@
             .services-image img {
                 margin: 20px auto 30px auto;
             }
-            .navbar ul {
-                flex-direction: column; /* Apilar ítems en móvil */
-            }
-            .navbar li {
-                margin: 5px 0; /* Menos margen vertical */
-            }
         }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <ul>
+        <div class="menu-toggle" id="mobile-menu">
+            &#9776; </div>
+        <ul id="navbar-links">
             <li><a href="#inicio" class="active">Inicio</a></li>
             <li><a href="#quienes-somos">Quiénes Somos</a></li>
             <li><a href="#servicios">Servicios</a></li>
@@ -248,12 +294,12 @@
                 <img src="IMG_7431.jpeg" alt="Logo BioInAgro">
             </div>
             <h1>BioInAgro: Descifrando el Microbioma, Cultivando el Futuro</h1>
-            <p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola</p>
+            <p class="tagline">Análisis biológico avanzado para la sostenibilidad y productividad agrícola.</p>
         </section>
 
         <section id="quienes-somos">
             <h2>Quiénes Somos</h2>
-            <p>Bienvenido/a a BioInAgro: Innovación en Análisis Biológico para la Agricultura Moderna</p>
+            <p>Bienvenido/a a BioInAgro: Innovación en análisis biológico para la agricultura moderna.</p>
             <p>En BioInAgro, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo de profesionales cualificados del sector con sede en el sur de España, apasionados por desvelar el "código biológico" que impulsa la salud y la productividad de sus cultivos.</p>
             <p>Nuestra experiencia académica y nuestra pasión por la bioinformática nos permiten ofrecer un servicio de análisis profundo y riguroso, adaptado a las necesidades específicas de la agricultura intensiva. Estamos aquí para cerrar la brecha entre la investigación puntera y la aplicación práctica en su finca.</p>
         </section>
@@ -275,10 +321,10 @@
             <h2>Por Qué Elegirnos</h2>
             <p>Sabemos que la agricultura moderna busca optimizar cada recurso y maximizar su rentabilidad. BioInAgro le ofrece una ventaja competitiva al abordar desafíos clave:</p>
             <ul>
-                <li>Rendimientos Mejorados: Identificamos microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de sus cultivos.</li>
-                <li>Fertilización Inteligente: Reducimos la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de su suelo para nutrir las plantas.</li>
-                <li>Salud Vegetal Preventiva: Detectamos desequilibrios microbianos o la presencia temprana de patógenos, permitiéndole actuar antes de que los problemas se agraven.</li>
-                <li>Sostenibilidad Real: Apoyamos la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de sus suelos y cumpliendo con las demandas del mercado.</li>
+                <li>Rendimientos mejorados: Identificamos microorganismos clave que potencian el crecimiento y la absorción de nutrientes, optimizando la productividad de sus cultivos.</li>
+                <li>Fertilización inteligente: Reducimos la dependencia de fertilizantes químicos al entender y potenciar la capacidad natural de su suelo para nutrir las plantas.</li>
+                <li>Salud vegetal preventiva: Detectamos desequilibrios microbianos o la presencia temprana de patógenos, permitiéndole actuar antes de que los problemas se agraven.</li>
+                <li>Sostenibilidad real: Apoyamos la transición hacia una agricultura más ecológica, mejorando la salud a largo plazo de sus suelos y cumpliendo con las demandas del mercado.</li>
             </ul>
             <p>Con BioInAgro, no solo obtiene datos; obtiene conocimiento accionable para tomar decisiones más informadas, eficientes y sostenibles en su día a día.</p>
         </section>
@@ -291,22 +337,31 @@
             <p><a href="mailto:aedifco@proton.me">Contáctenos hoy mismo</a> para una consulta gratuita y descubra cómo BioInAgro puede transformar su agricultura.</p>
 
             <div class="contact-info">
-                <p>aedifco@proton.me | [Su Teléfono] | Ubicación: Sur de España</p>
+                <p>aedifco@proton.me | Ubicación: Sur de España</p>
                 <p>*(Próximamente: Más información sobre nuestros servicios en BioInCode.com)*</p>
             </div>
         </section>
     </div>
 
     <script>
-        // Script para activar el estilo de "active" en la navbar al hacer scroll
+        // Script para el menú de hamburguesa
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            var navbarLinks = document.getElementById('navbar-links');
+            navbarLinks.classList.toggle('active');
+        });
+
+        // Script para activar el estilo de "active" en la navbar al hacer scroll y cerrar menú móvil
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('.navbar a');
+            const navbarLinksContainer = document.getElementById('navbar-links');
+            const menuToggle = document.getElementById('mobile-menu');
 
             function highlightNavOnScroll() {
                 let current = '';
                 sections.forEach(sec => {
-                    const sectionTop = sec.offsetTop - 100; // Ajuste para que se active antes
+                    // Ajuste para que la sección se active un poco antes de llegar a ella
+                    const sectionTop = sec.offsetTop - (window.innerHeight / 3); 
                     const sectionHeight = sec.clientHeight;
                     if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
                         current = sec.getAttribute('id');
@@ -320,6 +375,15 @@
                     }
                 });
             }
+
+            // Función para cerrar el menú móvil al hacer clic en un enlace
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) { // Solo si estamos en móvil
+                        navbarLinksContainer.classList.remove('active');
+                    }
+                });
+            });
 
             window.addEventListener('scroll', highlightNavOnScroll);
             highlightNavOnScroll(); // Llama una vez al cargar para establecer el activo inicial
