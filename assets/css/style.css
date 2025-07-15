@@ -564,3 +564,28 @@ color: #ee0c45;
         height: 20px;
     }
 }
+/* Ajustes para el logo */
+.navbar-brand img {
+    max-height: 50px; /* Limita la altura máxima del logo en la barra de navegación */
+    width: auto;     /* Mantiene la proporción para que no se deforme */
+    vertical-align: middle; /* Ayuda a alinear si hay otros elementos */
+    padding: 5px 0; /* Un poco de espacio arriba y abajo */
+}
+
+/* Ajustes para el logo grande en la sección principal (hero) */
+header#head .logo-hero img {
+    max-width: 280px; /* Ajusta el ancho máximo del logo en la cabecera */
+    height: auto;     /* Mantiene la proporción */
+    display: block;   /* Para que ocupe su propia línea */
+    margin: 20px auto; /* Centra la imagen horizontalmente y añade margen vertical */
+}
+
+/* Ajustar tamaño de fuente del lema para que no sea tan grande */
+header#head .tagline {
+    font-size: 1.2em; /* Puedes ajustar este valor si aún es muy grande */
+}
+
+/* Ajustar tamaño de fuente del título principal */
+header#head h1 {
+    font-size: 2.5em; /* Puedes ajustar este valor si es muy grande */
+}
