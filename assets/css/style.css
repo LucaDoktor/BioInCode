@@ -1,4 +1,4 @@
-/*
+Tengo esto en style.css /*
 Theme: Atlanta - Free business bootstrap template
 Description: Free to use for personal and commercial use
 Author: WebThemez.com
@@ -588,34 +588,4 @@ header#head .tagline {
 /* Ajustar tamaño de fuente del título principal */
 header#head h1 {
     font-size: 2.5em; /* Puedes ajustar este valor si es muy grande */
-}
-
-/* *** Nuevas reglas para justificar el texto y otros ajustes ***
-   Añade estas reglas al final de tu style.css
-*/
-
-/* Justificar el texto de párrafos */
-p {
-    text-align: justify;
-}
-
-/* Si tienes otras secciones de contenido que no son párrafos directos pero quieres justificar su texto,
-   como divs con una clase específica para contenido principal, también puedes añadirlas aquí.
-   Por ejemplo, si tu contenido está dentro de un <div class="container"> o <div class="main-content">
-*/
-.container p, .container div, .main-content p, .main-content div { /* Ajusta los selectores según tu HTML */
-    text-align: justify;
-}
-
-/* Sobrescribir la justificación para títulos y eslóganes */
-/* Asegúrate de que tus títulos (h1, h2, etc. de la sección de bienvenida) y el eslogan
-   NO tengan text-align: justify. La plantilla ya los centra en algunos lugares,
-   pero esta regla asegura que no se justifiquen si son afectados por la regla de 'p' o '.container'. */
-#head .lead, #head .tagline, .page-title, h1, h2, h3, h4, h5, h6 {
-    text-align: center; /* O 'left', 'right' si los quieres alineados de otra forma */
-}
-
-/* Si el texto que me proporcionaste está en un div con una clase específica, por ejemplo, '.about-section' */
-.about-section p { /* Asumiendo que el texto está en <p> dentro de <div class="about-section"> */
-    text-align: justify;
 }
