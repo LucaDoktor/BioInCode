@@ -55,7 +55,7 @@ label {
     background-image: url(../images/IMG_7507.jpeg); /* La imagen de fondo */
     background-size: cover; /* Cubre todo el área */
     background-position: center center; /* Centra la imagen */
-    opacity: 0.5; /* <-- Aquí la opacidad del 50% solo afecta a la imagen de fondo */
+    opacity: 0.25; /* <-- Aquí la opacidad del 50% solo afecta a la imagen de fondo */
     z-index: 0; /* Asegura que la imagen esté *detrás* del contenido de #head */
 }
 
