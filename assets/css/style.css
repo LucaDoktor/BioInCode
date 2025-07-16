@@ -29,40 +29,39 @@ label {
 
 /* Header */
 #head {
-    /*background: #F8F8F4 url(../images/IMG_7507.jpeg) no-repeat center center; /* ¡Nombre de archivo actualizado! */
-    /*background-size: cover; */
-    min-height: 200px; /* Reducida la altura mínima para hacer la cabecera más pequeña */
+    background-color: #F8F8F4;
+    min-height: 250px; /* AJUSTADO: Reducida la altura mínima para hacer la cabecera más compacta */
     text-align: center;
-    padding-top: 100px; /* Reducido el padding-top para centrar mejor el contenido verticalmente */
-    color: #333; /* Color del texto. Antes era 'white' en el CSS original de #head */
+    padding-top: 60px; /* AJUSTADO: Reducido el padding-top para centrar mejor el contenido verticalmente */
+    color: #333; /* Color del texto para contraste con el fondo crema */
     font-family: "Open sans", Helvetica, Arial;
     font-weight: 300;
-    /* opacity: 0.5; /* <-- ¡Eliminada de aquí para que no afecte al logo y texto! */
 
-    position: relative; /* Necesario para que el pseudo-elemento ::before se posicione correctamente */
-    overflow: hidden; /* Para asegurar que la imagen de fondo no se salga */
-    background-color: #F8F8F4; /* Color de fondo sólido de respaldo */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 /* Pseudo-elemento para la imagen de fondo con transparencia */
 #head::before {
-    content: ""; /* Obligatorio para pseudo-elementos */
-    position: absolute; /* Permite posicionar la imagen independientemente del flujo */
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 50%;
-    background-image: url(../images/IMG_7507.jpeg); /* La imagen de fondo */
-    background-size: cover; /* Cubre todo el área */
+    width: 100%; /* El pseudo-elemento cubre todo el #head */
+    height: 100%; /* El pseudo-elemento cubre todo el #head */
+    background-image: url(../images/IMG_7507.jpeg); /* La imagen de ADN */
+    background-size: 50% auto; /* AJUSTADO: La imagen ocupa el 50% del ancho del contenedor, la altura se ajusta automáticamente. Puedes usar un valor fijo como '300px' si quieres. */
+    background-repeat: no-repeat; /* Para que la imagen no se repita */
     background-position: center center; /* Centra la imagen */
-    opacity: 0.2; /* <-- Aquí la opacidad del 50% solo afecta a la imagen de fondo */
-    z-index: 0; /* Asegura que la imagen esté *detrás* del contenido de #head */
+    opacity: 0.2; /* Opacidad de la imagen de fondo */
+    z-index: -1;
 }
 
 /* Regla para elevar el contenido de #head (incluido el logo, título, eslogan) sobre el fondo transparente */
 #head > * {
-    position: relative; /* Necesario para que z-index funcione en algunos navegadores/contextos */
-    z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento de fondo */
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -112,7 +111,7 @@ label {
     background: transparent;
 }
 
-#head .btn-default:active, 
+#head .btn-default:active,
 		#head .btn-default.active {
     color: #fff;
     -webkit-box-shadow: inset 0px 0px 0px 3px #fff;
@@ -260,7 +259,7 @@ img.pull-left {
 
 .sidebar h1, .sidebar .h1, .sidebar h2, .sidebar .h2, .sidebar h3, .sidebar .h3 {
     margin-top: 20px;
-} 
+}
 
 /* Footer */
 .footer1 {
@@ -343,8 +342,8 @@ img.pull-left {
 
 .panel-simplenav a {
     margin: 0 5px;
-}		
-	
+}
+
 /* carousel */
 #quote-carousel {
     padding: 0 10px 30px 10px;
@@ -419,7 +418,7 @@ list-style: none;
 	margin: 0px;
 	padding: 0px
   }
-  
+
   /* ------- */
 
 .isotopeWrapper article {
@@ -558,7 +557,7 @@ color: #ee0c45;
 }
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     #quote-carousel {
         margin-bottom: 0;
         padding: 0 40px 30px 40px;
@@ -572,8 +571,8 @@ color: #ee0c45;
 	}
 }
 /* Small devices (tablets, up to 768px) */
-@media (max-width: 768px) {     
-    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */    
+@media (max-width: 768px) {
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
     #quote-carousel .carousel-indicators {
         bottom: -20px !important;
     }
