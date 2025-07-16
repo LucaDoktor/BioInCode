@@ -29,15 +29,15 @@ label {
 
 /* Header */
 #head {
-    background: #F8F8F4; /* Or whatever "grey-cream-yellow" color you chose */
-    background-image: url( ../images/bg_header.jpg); <--- COMMENT OUT OR REMOVE THIS LINE */
+    background: #F8F8F4 url(../images/IMG_7507.jpeg) no-repeat center center; /* ¡Nombre de archivo actualizado! */
     background-size: cover;
     min-height: 520px;
     text-align: center;
     padding-top: 240px;
-    color: #333; /* Remember to change text color for better contrast! */
+    color: #333; /* Recuerda cambiar el color del texto para un mejor contraste si es necesario */
     font-family: "Open sans", Helvetica, Arial;
     font-weight: 300;
+    opacity: 0.5; /* Transparencia del 50% */
 }
 
 #head.secondary {
