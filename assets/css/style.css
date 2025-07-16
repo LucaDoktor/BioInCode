@@ -29,16 +29,42 @@ label {
 
 /* Header */
 #head {
-    background: #F8F8F4 url(../images/IMG_7507.jpeg) no-repeat center center; /* ¡Nombre de archivo actualizado! */
-    background-size: cover;
-    min-height: 520px;
+    /*background: #F8F8F4 url(../images/IMG_7507.jpeg) no-repeat center center; /* ¡Nombre de archivo actualizado! */
+    /*background-size: cover; */
+    min-height: 350px; /* Reducida la altura mínima para hacer la cabecera más pequeña */
     text-align: center;
-    padding-top: 240px;
-    color: #333; /* Recuerda cambiar el color del texto para un mejor contraste si es necesario */
+    padding-top: 100px; /* Reducido el padding-top para centrar mejor el contenido verticalmente */
+    color: #333; /* Color del texto. Antes era 'white' en el CSS original de #head */
     font-family: "Open sans", Helvetica, Arial;
     font-weight: 300;
-    opacity: 0.5; /* Transparencia del 50% */
+    /* opacity: 0.5; /* <-- ¡Eliminada de aquí para que no afecte al logo y texto! */
+
+    position: relative; /* Necesario para que el pseudo-elemento ::before se posicione correctamente */
+    overflow: hidden; /* Para asegurar que la imagen de fondo no se salga */
+    background-color: #F8F8F4; /* Color de fondo sólido de respaldo */
 }
+
+/* Pseudo-elemento para la imagen de fondo con transparencia */
+#head::before {
+    content: ""; /* Obligatorio para pseudo-elementos */
+    position: absolute; /* Permite posicionar la imagen independientemente del flujo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/IMG_7507.jpeg); /* La imagen de fondo */
+    background-size: cover; /* Cubre todo el área */
+    background-position: center center; /* Centra la imagen */
+    opacity: 0.5; /* <-- Aquí la opacidad del 50% solo afecta a la imagen de fondo */
+    z-index: 0; /* Asegura que la imagen esté *detrás* del contenido de #head */
+}
+
+/* Regla para elevar el contenido de #head (incluido el logo, título, eslogan) sobre el fondo transparente */
+#head > * {
+    position: relative; /* Necesario para que z-index funcione en algunos navegadores/contextos */
+    z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento de fondo */
+}
+
 
 #head.secondary {
     height: 100px;
@@ -50,12 +76,12 @@ label {
     font-family: "Open sans", Helvetica, Arial;
     font-size: 44px;
     margin-bottom: 6px;
-    color: white;
+    color: white; /* Mantengo el blanco aquí para el título principal si lo prefieres */
     line-height: 1.15em;
 }
 
 #head .tagline {
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.75); /* Mantengo el blanco translúcido aquí para el eslogan */
     margin-bottom: 25px;
 }
 
