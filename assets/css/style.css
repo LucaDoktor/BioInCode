@@ -30,7 +30,7 @@ label {
 /* Header */
 #head {
     background-color: #F8F8F4;
-    min-height: 150px; /* AJUSTADO: Reducida la altura mínima para hacer la cabecera más compacta */
+    min-height: 75px; /* AJUSTADO: Reducida la altura mínima para hacer la cabecera más compacta */
     text-align: center;
     padding-top: 60px; /* AJUSTADO: Reducido el padding-top para centrar mejor el contenido verticalmente */
     color: #333; /* Color del texto para contraste con el fondo crema */
@@ -74,14 +74,14 @@ label {
 #head .lead {
     font-family: "Open sans", Helvetica, Arial;
     font-size: 44px;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     color: white; /* Mantengo el blanco aquí para el título principal si lo prefieres */
     line-height: 1.15em;
 }
 
 #head .tagline {
     color: rgba(255,255,255,0.75); /* Mantengo el blanco translúcido aquí para el eslogan */
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 #head .tagline a {
@@ -592,10 +592,10 @@ color: #ee0c45;
 }
 /* Ajustes para el logo */
 .navbar-brand img {
-    max-height: 50px; /* Limita la altura máxima del logo en la barra de navegación */
+    max-height: 40px; /* Limita la altura máxima del logo en la barra de navegación */
     width: auto;     /* Mantiene la proporción para que no se deforme */
     vertical-align: middle; /* Ayuda a alinear si hay otros elementos */
-    padding: 5px 0; /* Un poco de espacio arriba y abajo */
+    padding: 0px 0; /* Un poco de espacio arriba y abajo */
 }
 
 /* Ajustes para el logo grande en la sección principal (hero) */
