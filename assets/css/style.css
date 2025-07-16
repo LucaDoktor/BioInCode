@@ -30,7 +30,7 @@ label {
 /* Header */
 #head {
     background: #F8F8F4; /* Or whatever "grey-cream-yellow" color you chose */
-    /* background-image: url( ../images/bg_header.jpg); <--- COMMENT OUT OR REMOVE THIS LINE */
+    background-image: url( ../images/bg_header.jpg); <--- COMMENT OUT OR REMOVE THIS LINE */
     background-size: cover;
     min-height: 520px;
     text-align: center;
