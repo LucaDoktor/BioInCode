@@ -30,7 +30,7 @@ label {
 /* Header */
 #head {
     background-color: #F8F8F4;
-    min-height: 250px; /* AJUSTADO: Reducida la altura mínima para hacer la cabecera más compacta */
+    min-height: 150px; /* AJUSTADO: Reducida la altura mínima para hacer la cabecera más compacta */
     text-align: center;
     padding-top: 60px; /* AJUSTADO: Reducido el padding-top para centrar mejor el contenido verticalmente */
     color: #333; /* Color del texto para contraste con el fondo crema */
@@ -51,10 +51,10 @@ label {
     width: 100%; /* El pseudo-elemento cubre todo el #head */
     height: 100%; /* El pseudo-elemento cubre todo el #head */
     background-image: url(../images/IMG_7507.jpeg); /* La imagen de ADN */
-    background-size: 50% auto; /* AJUSTADO: La imagen ocupa el 50% del ancho del contenedor, la altura se ajusta automáticamente. Puedes usar un valor fijo como '300px' si quieres. */
+    background-size: 100% auto; /* AJUSTADO: La imagen ocupa el 50% del ancho del contenedor, la altura se ajusta automáticamente. Puedes usar un valor fijo como '300px' si quieres. */
     background-repeat: no-repeat; /* Para que la imagen no se repita */
     background-position: center center; /* Centra la imagen */
-    opacity: 0.2; /* Opacidad de la imagen de fondo */
+    opacity: 0.1; /* Opacidad de la imagen de fondo */
     z-index: -1;
 }
 
