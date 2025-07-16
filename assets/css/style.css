@@ -31,7 +31,7 @@ label {
 #head {
     /*background: #F8F8F4 url(../images/IMG_7507.jpeg) no-repeat center center; /* ¡Nombre de archivo actualizado! */
     /*background-size: cover; */
-    min-height: 350px; /* Reducida la altura mínima para hacer la cabecera más pequeña */
+    min-height: 200px; /* Reducida la altura mínima para hacer la cabecera más pequeña */
     text-align: center;
     padding-top: 100px; /* Reducido el padding-top para centrar mejor el contenido verticalmente */
     color: #333; /* Color del texto. Antes era 'white' en el CSS original de #head */
