@@ -7,19 +7,25 @@
     <meta name="author" content="BioInCode">
     <title>BioInCode: Descifrando el Microbioma, Cultivando el Futuro</title>
 
-    <link rel="icon" href="assets/images/favicon.png" type="image/png"> <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <link rel="stylesheet" media="screen" href="//fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400&display=swap">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
-    <link rel="stylesheet" href="assets/css/style.css"> </head>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
 
 <body class="home-page">
+    <!-- Navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top headroom">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                </button>
                 <a class="navbar-brand" href="index.html"><img src="assets/images/IMG_7431.PNG" alt="BioInCode Logo"></a>
             </div>
             <div class="navbar-collapse collapse">
@@ -29,8 +35,11 @@
                     <li><a href="services.html">Servicios</a></li>
                     <li><a href="contact.html">Contacto</a></li>
                 </ul>
-            </div></div>
+            </div>
+        </div>
     </div>
+
+    <!-- Hero Header -->
     <header id="head" class="home-header">
         <div class="container">
             <div class="logo-hero">
@@ -40,6 +49,8 @@
             <p class="tagline">Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola.</p>
         </div>
     </header>
+
+    <!-- Main Content -->
     <div class="container main-content-wrapper">
         <div class="row">
             <article class="col-sm-12 maincontent">
@@ -48,6 +59,8 @@
             </article>
         </div>
     </div>
+
+    <!-- Footer -->
     <footer id="footer" class="top-space">
         <div class="footer1">
             <div class="container">
@@ -55,18 +68,18 @@
                     <div class="col-md-5 panel">
                         <h3 class="panel-title">Acerca de BioInCode</h3>
                         <div class="panel-body">
-                            <p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola. Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos. </p>
+                            <p>En BioInCode, creemos que el futuro de la agricultura reside en entender lo invisible. Somos un equipo apasionado por la ciencia del microbioma, con sede en el sur de España, y dedicados a aplicar nuestros conocimientos para el beneficio del sector agrícola. Nuestra experiencia en técnicas moleculares y métodos cultivables nos permite ofrecer una visión profunda y exhaustiva de los ecosistemas microbianos.</p>
                         </div>
                     </div>
 
                     <div class="col-md-4 panel contact">
-                        <h3 class="panel-title">Información de Contacto</h4>
+                        <h3 class="panel-title">Información de Contacto</h3>
                         <div class="panel-body">
-                        <p>Contáctenos hoy mismo para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.</p>
-                        <ul>
-                            <li><a href="mailto:aedifco@proton.me"><i class="fa fa-envelope-o"></i> aedifco@proton.me</a></li>
-                            <li><i class="fa fa-map-marker"></i> Almería, España</li>
-                        </ul>
+                            <p>Contáctenos hoy mismo para una consulta gratuita y descubra cómo BioInCode puede transformar su agricultura.</p>
+                            <ul>
+                                <li><a href="mailto:aedifco@proton.me"><i class="fa fa-envelope-o"></i> aedifco@proton.me</a></li>
+                                <li><i class="fa fa-map-marker"></i> Almería, España</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -81,7 +94,8 @@
                         </div>
                     </div>
 
-                </div> </div>
+                </div>
+            </div>
         </div>
 
         <div class="footer2">
@@ -105,15 +119,28 @@
                             </p>
                         </div>
                     </div>
-                </div> </div>
+                </div>
+            </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="assets/js/headroom.min.js"></script>
     <script src="assets/js/jQuery.headroom.min.js"></script>
     <script src="assets/js/custom.js"></script>
-    <script src="//code.tidio.co/tdcjt7kdwzzzsaws8rbgegibytfbvmyr.js"></script>
-    </body>
+
+    <!-- Tidio Chatbot Charli -->
+    <script src="//code.tidio.co/tdcjt7kdwzzzsaws8rbgegibytfbvmyr.js" async></script>
+    <script>
+        document.addEventListener("tidioChat-ready", function () {
+            window.tidioChatApi.open();
+            window.tidioChatApi.sendMessage({
+                type: "text",
+                message: "👋 ¡Hola! Soy Charli, el asistente virtual de BioInCode. ¿En qué puedo ayudarte hoy?"
+            });
+        });
+    </script>
+</body>
 </html>
