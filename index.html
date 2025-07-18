@@ -1,69 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="BioInCode: Análisis Biológico Avanzado para la Sostenibilidad y Productividad Agrícola."/>
-  <title>BioInCode | Descifrando el Microbioma</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioincode - Biotecnología Sostenible</title>
+    
+    <!-- Open Sans: única fuente principal -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <img src="assets/images/IMG_7431.PNG" alt="Logo BioInCode" class="logo">
-      <h1>Descifrando el Microbioma, Cultivando el Futuro</h1>
-      <p>Análisis Biológico Avanzado para una Agricultura Sostenible.</p>
-    </div>
-  </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Inicio</a></li>
-      <li><a href="about.html">Quiénes Somos</a></li>
-      <li><a href="services.html">Servicios</a></li>
-      <li><a href="contact.html">Contacto</a></li>
-    </ul>
-  </nav>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Bioincode</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">Sobre Nosotros</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <main class="main-content">
-    <section class="intro">
-      <p>
-        En BioInCode, convertimos la complejidad del mundo microbiano en soluciones prácticas para su explotación agrícola. Nuestro equipo de expertos en biotecnología, bioquímica y bioinformática desvela el código biológico de suelos, plantas y productos agrícolas mediante análisis avanzados.
-      </p>
-      <p>
-        Optimice su producción, fomente la sostenibilidad y garantice la calidad con nuestras herramientas científicas. Explore nuestras secciones para saber más sobre nuestros servicios y cómo podemos acompañarle hacia una agricultura más eficiente.
-      </p>
+    <!-- HEADER -->
+    <header id="head">
+        <div class="container">
+            <div class="logo-hero">
+                <img src="assets/images/logo.png" alt="Logo Bioincode">
+            </div>
+            <h1 class="lead">Biotecnología Sostenible</h1>
+            <p class="tagline">Innovación científica al servicio del medio ambiente</p>
+            <a class="btn btn-default btn-lg" href="#about">Descubre más</a>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="container main-content-wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 maincontent">
+                <h2>Sobre Nosotros</h2>
+                <p>En Bioincode, estamos comprometidos con el desarrollo de soluciones biotecnológicas sostenibles para los desafíos medioambientales actuales. Nuestra misión es acercar la ciencia a la sociedad mediante proyectos innovadores y colaborativos.</p>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="footer-section about">
-      <h3>Acerca de BioInCode</h3>
-      <p>
-        Somos un equipo apasionado por la ciencia del microbioma con sede en el sur de España. Aplicamos técnicas moleculares y métodos cultivables para ofrecer una visión exhaustiva de los ecosistemas microbianos agrícolas.
-      </p>
-    </div>
+    <!-- SERVICES SECTION -->
+    <section id="services" class="container main-content-wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 maincontent">
+                <h2>Servicios</h2>
+                <ul>
+                    <li>Consultoría en biotecnología ambiental</li>
+                    <li>Desarrollo de proyectos de I+D</li>
+                    <li>Educación y divulgación científica</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <div class="footer-section contact">
-      <h3>Contacto</h3>
-      <p><a href="mailto:aedifco@proton.me">aedifco@proton.me</a></p>
-      <p>Almería, España</p>
-    </div>
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container main-content-wrapper">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 maincontent">
+                <h2>Contacto</h2>
+                <p>¿Quieres colaborar con nosotros? ¿Tienes alguna duda o propuesta? No dudes en escribirnos.</p>
+                <a class="btn btn-primary btn-lg" href="mailto:info@bioincode.com">Escríbenos</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="footer-section social">
-      <h3>Síguenos</h3>
-      <p>
-        <a href="#">Twitter</a> |
-        <a href="#">LinkedIn</a> |
-        <a href="#">Facebook</a>
-      </p>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 panel">
+                        <div class="panel-body">
+                            <h4 class="panel-title">Sobre Bioincode</h4>
+                            <p>Bioincode es una iniciativa centrada en la aplicación de la biotecnología para la mejora del medio ambiente y la sociedad.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 panel">
+                        <div class="panel-body">
+                            <h4 class="panel-title">Enlaces</h4>
+                            <ul>
+                                <li><a href="#about">Sobre Nosotros</a></li>
+                                <li><a href="#services">Servicios</a></li>
+                                <li><a href="#contact">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 panel">
+                        <div class="panel-body">
+                            <h4 class="panel-title">Síguenos</h4>
+                            <div class="follow-me-icons">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer2 text-center">
+            <div class="container">
+                <p>&copy; 2025 Bioincode. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
-    <div class="footer-bottom">
-      <p>&copy; 2024 BioInCode. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+    <!-- JS Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
 </body>
 </html>
