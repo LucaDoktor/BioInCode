@@ -1,104 +1,259 @@
-/* Fuente base */
+/* ==========================================================================
+Theme: Atlanta - Free business bootstrap template
+Author: WebThemez.com - http://webthemez.com
+License: Creative Commons Attribution 3.0 - http://creativecommons.org/licenses/by/3.0/
+========================================================================== */
+
+/* ------------ GENERAL ------------ */
 body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #222;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-/* Hero */
-.hero {
-  background: linear-gradient(to right, #0a3c59, #187397);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 30px;
+}
+blockquote {
+    font-style: italic;
+    font-family: Georgia, serif;
+    color: #999;
+    margin: 30px 0;
+}
+label {
+    color: #777;
+}
+img {
+    max-width: 100%;
+}
+img.pull-right {
+    margin-left: 10px;
+}
+img.pull-left {
+    margin-right: 10px;
 }
 
-.hero .logo {
-  width: 120px;
-  margin-bottom: 1rem;
+/* ------------ HEADER (#head) ------------ */
+#head {
+    background-color: #F8F8F4;
+    min-height: 400px;
+    text-align: center;
+    padding-top: 100px;
+    color: #333;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+#head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/IMG_7507.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.15;
+    z-index: -1;
+}
+#head > * {
+    position: relative;
+    z-index: 2;
+}
+#head.secondary {
+    height: 100px;
+    min-height: 100px;
+    padding-top: 20px;
+}
+#head .lead {
+    font-size: 44px;
+    margin-bottom: 2px;
+    color: white;
+    line-height: 1.15em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+#head .tagline {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+#head .tagline a {
+    color: #fff;
+}
+#head .btn {
+    margin-bottom: 10px;
+}
+#head .btn-default {
+    text-shadow: none;
+    background: transparent;
+    color: rgba(255,255,255,.5);
+    box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,.5);
+}
+#head .btn-default:hover,
+#head .btn-default:focus {
+    color: rgba(255,255,255,.8);
+    box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,.8);
+}
+#head .btn-default:active,
+#head .btn-default.active {
+    color: #fff;
+    box-shadow: inset 0px 0px 0px 3px #fff;
 }
 
-.hero h1 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
+/* ------------ LOGOS ------------ */
+.navbar-brand img {
+    max-height: 40px;
+    width: auto;
+    vertical-align: middle;
+    padding: 0;
+}
+header#head .logo-hero img {
+    max-width: 280px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+header#head h1 {
+    font-size: 2.5em;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  font-weight: 300;
+/* ------------ FOOTER ------------ */
+.footer1 {
+    background: #302A31;
+    padding: 30px 0 0 0;
+    font-size: 12px;
+    color: #999;
+}
+.footer1 a {
+    color: #ccc;
+}
+.footer1 a:hover {
+    color: #fff;
+}
+.footer1 .panel-title {
+    font-size: 17px;
+    font-weight: bold;
+    color: #ccc;
+    margin: 0 0 20px;
+}
+.footer2 {
+    background: #191919;
+    padding: 15px 0;
+    color: #777;
+    font-size: 12px;
+}
+.footer2 a {
+    color: #aaa;
+}
+.footer2 a:hover {
+    color: #fff;
+}
+.footer2 p {
+    margin: 0;
+}
+.follow-me-icons {
+    font-size: 30px;
+}
+.follow-me-icons i {
+    float: left;
+    margin: 0 10px 0 0;
 }
 
-/* Navegación */
-.navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
+/* ------------ MAIN LAYOUT + HELPERS ------------ */
+.panel {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+.panel-body {
+    padding: 20px;
+}
+.maincontent {
+    font-size: 1.1em;
+}
+.btn-primary {
+    color: #FFEFD7;
+    background: linear-gradient(to bottom, #0ecfec 0%, #09bed9 100%);
+    border: none;
+}
+.btn-primary:hover {
+    background: #04a0b7;
+}
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+}
+.top-space {
+    margin-top: 60px;
+}
+.top-margin {
+    margin-top: 20px;
+}
+.sidebar {
+    padding-top: 36px;
+    padding-bottom: 30px;
 }
 
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0.5rem 1rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+/* ------------ MEDIA QUERIES ------------ */
+@media (max-width: 767px) {
+    #head {
+        min-height: 420px;
+        padding-top: 160px;
+    }
+    #head .lead {
+        font-size: 34px;
+    }
+    .navbar-collapse ul {
+        text-align: right;
+        margin-right: 0;
+    }
+}
+@media (min-width: 768px) {
+    #quote-carousel {
+        margin-bottom: 0;
+        padding: 0 40px 30px 40px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 768px) {
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        width: 20px;
+        height: 20px;
+    }
 }
 
-.navbar li {
-  margin: 0 1rem;
+/* ==========================================================================
+   🔧 MODIFICACIONES PERSONALIZADAS BIOINCODE
+   ========================================================================== */
+
+.main-content-wrapper {
+    margin-top: 50px;
 }
 
-.navbar a {
-  text-decoration: none;
-  color: #0a3c59;
-  font-weight: 600;
-  transition: color 0.3s;
+.maincontent p {
+    text-align: justify;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #187397;
-}
-
-/* Contenido */
-.main-content {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
-}
-
-.intro p {
-  margin-bottom: 1rem;
-}
-
-/* Footer */
-.footer {
-  background-color: #0a3c59;
-  color: white;
-  padding: 2rem 1rem;
-  text-align: center;
-}
-
-.footer-section {
-  margin-bottom: 1.5rem;
-}
-
-.footer-section h3 {
-  margin-bottom: 0.5rem;
-}
-
-.footer-section a {
-  color: #9cd9f0;
-  text-decoration: none;
-}
-
-.footer-bottom {
-  border-top: 1px solid #17506f;
-  padding-top: 1rem;
-  margin-top: 1rem;
-  font-size: 0.9rem;
+.footer1 .panel-body p,
+.footer1 .panel-body li {
+    text-align: justify;
 }
