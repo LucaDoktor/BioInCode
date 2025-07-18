@@ -131,16 +131,59 @@
     <script src="assets/js/jQuery.headroom.min.js"></script>
     <script src="assets/js/custom.js"></script>
 
-    <!-- Tidio Chatbot Charli -->
-    <script src="//code.tidio.co/tdcjt7kdwzzzsaws8rbgegibytfbvmyr.js" async></script>
     <script>
-        document.addEventListener("tidioChat-ready", function () {
-            window.tidioChatApi.open();
-            window.tidioChatApi.sendMessage({
-                type: "text",
-                message: "👋 ¡Hola! Soy Charli, el asistente virtual de BioInCode. ¿En qué puedo ayudarte hoy?"
-            });
-        });
-    </script>
+  // Función para responder automáticamente según palabra clave y tono técnico
+  function handleUserMessage(msg) {
+    const texto = msg.toLowerCase();
+
+    // Diccionarios de palabras clave
+    const tecnicas = ["pcr", "qpcr", "secuenciación", "metagenómica", "microbioma", "bioinformática", "taxonomía", "amplificación", "adn", "rna"];
+    const saludos = ["hola", "buenas", "hey", "buenos días", "me interesa", "quiero saber"];
+    const tieneTerminoTecnico = tecnicas.some(palabra => texto.includes(palabra));
+    const esSaludo = saludos.some(palabra => texto.includes(palabra));
+
+    // Respuestas por categoría
+    if (texto.includes("servicio") || texto.includes("análisis") || texto.includes("oferta")) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "🔬 Ofrecemos análisis microbiológicos avanzados para suelo, plantas y productos agrícolas. Puedes ver más aquí: https://bioincode.com/services.html"
+      });
+    } else if (texto.includes("contacto") || texto.includes("correo") || texto.includes("llamar") || texto.includes("email")) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "📬 Puedes escribirnos a aedifco@proton.me o encontrarnos en Almería, España. También puedes usar el formulario en https://bioincode.com/contact.html"
+      });
+    } else if (texto.includes("quién eres") || texto.includes("qué hacéis") || texto.includes("empresa") || texto.includes("quiénes sois")) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "👨‍🔬 Somos BioInCode, un equipo de especialistas en microbioma agrícola. Desciframos el código microbiano para mejorar la sostenibilidad y productividad del campo. Más info: https://bioincode.com/about.html"
+      });
+    } else if (tieneTerminoTecnico) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "🧬 ¡Veo que tienes conocimientos técnicos! Si estás interesado en metagenómica, secuenciación 16S o análisis bioinformáticos del microbioma agrícola, en BioInCode trabajamos con pipelines avanzados de procesamiento y análisis. ¿Te gustaría que te muestre un ejemplo de informe?"
+      });
+    } else if (esSaludo) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "¡Hola! 👋 Soy Charli, el asistente de BioInCode. Estoy aquí para ayudarte con todo lo que necesites sobre microbioma agrícola, servicios o contacto. ¿En qué puedo ayudarte?"
+      });
+    } else if (texto.includes("suelo") || texto.includes("plantas") || texto.includes("microbioma")) {
+      window.tidioChatApi.sendMessage({
+        type: "text",
+        message: "🌱 En BioInCode estudiamos los ecosistemas microbianos del suelo y las plantas para mejorar la salud del cultivo y reducir el uso de químicos. ¿Quieres que analicemos el microbioma de tu explotación?"
+      });
+    }
+  }
+
+  // Evento para capturar los mensajes entrantes del usuario
+  document.addEventListener("tidioChat-ready", function () {
+    window.tidioChatApi.on("message:received", function (message) {
+      if (message.from === "visitor" && message.type === "text") {
+        handleUserMessage(message.message);
+      }
+    });
+  });
+</script>
 </body>
 </html>
